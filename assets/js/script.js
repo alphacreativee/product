@@ -50,6 +50,7 @@ function intro() {
         scrub: 1,
         pin: "canvas",
         end: "500%",
+        pinSpacing: false,
         // markers: true,
       },
       onUpdate: render,
@@ -120,4 +121,7 @@ preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
 
   init();
+});
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
 });
