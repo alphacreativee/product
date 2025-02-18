@@ -50,7 +50,7 @@ function intro() {
         scrub: 1,
         pin: "canvas",
         end: "500%",
-        markers: true,
+        // markers: true,
       },
       onUpdate: render,
     });
@@ -82,15 +82,31 @@ function hero() {
     { scale: 1 },
     {
       scale: 2,
-      // opacity: 0,
+      autoAlpha: 0,
       ease: "sine.out",
       scrollTrigger: {
-        trigger: ".hero",
+        trigger: ".hero__img",
         start: "top top",
-        end: "+=50%",
+        end: "+=100%",
         scrub: true,
         // markers: true,
         pin: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".intro",
+    {
+      autoAlpha: 0,
+    },
+    {
+      autoAlpha: 1,
+      scrollTrigger: {
+        trigger: ".intro",
+        start: "top top",
+        end: "top 20%",
+        scrub: true,
       },
     }
   );
