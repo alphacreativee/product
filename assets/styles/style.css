@@ -1,3 +1,7 @@
+:root {
+  --font-heading: "Genath", sans-serif;
+  --font-body: "Atlas Grotesk", sans-serif;
+}
 * {
   margin: 0;
   padding: 0;
