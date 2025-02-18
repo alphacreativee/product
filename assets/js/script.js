@@ -11,7 +11,7 @@ function intro() {
 
   // Define a function to run at each animation frame
   const scrollFn = (time) => {
-    lenis.raf(time); // Run Lenis' requestAnimationFrame method
+    lenis.raf(time * 1000); // Run Lenis' requestAnimationFrame method
     requestAnimationFrame(scrollFn); // Recursively call scrollFn on each frame
   };
   // Start the animation frame loop
