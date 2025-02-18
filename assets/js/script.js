@@ -11,7 +11,7 @@ function intro() {
 
   // Define a function to run at each animation frame
   const scrollFn = (time) => {
-    lenis.raf(time); // Run Lenis' requestAnimationFrame method
+    lenis.raf(time * 1000); // Run Lenis' requestAnimationFrame method
     requestAnimationFrame(scrollFn); // Recursively call scrollFn on each frame
   };
   // Start the animation frame loop
@@ -50,6 +50,8 @@ function intro() {
         scrub: 1,
         pin: "canvas",
         end: "500%",
+        pinSpacing: false,
+        // markers: true,
       },
       onUpdate: render,
     });
@@ -137,12 +139,69 @@ function callParallax(e) {
   parallaxIt(e, $button, 30);
 }
 
+function hero() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    ".hero__img",
+    { scale: 0.9 },
+    { scale: 1, duration: 2, ease: "power2.out" }
+  );
+
+  gsap.fromTo(
+    ".hero__img",
+    { scale: 1 },
+    {
+      scale: 2,
+      autoAlpha: 0,
+      ease: "sine.out",
+      scrollTrigger: {
+        trigger: ".hero__img",
+        start: "top top",
+        end: "+=100%",
+        scrub: true,
+        // markers: true,
+        pin: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".intro",
+    {
+      autoAlpha: 0,
+    },
+    {
+      autoAlpha: 1,
+      scrollTrigger: {
+        trigger: ".intro",
+        start: "top top",
+        end: "top 20%",
+        scrub: 1,
+      },
+    }
+  );
+  // gsap.to(".hero", {
+  //   height: "650vh",
+  //   scrollTrigger: {
+  //     trigger: ".details",
+  //     start: "top 20%", // Khi `.details` sắp xuất hiện trong viewport
+  //     markers: true,
+  //     onEnter: () => ScrollTrigger.refresh(), // Cập nhật lại ScrollTrigger
+  //   },
+  // });
+}
+
 const init = () => {
   intro();
   productDetail();
+  hero();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
 
   init();
+});
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
 });
