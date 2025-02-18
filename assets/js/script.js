@@ -107,7 +107,7 @@ function hero() {
         trigger: ".intro",
         start: "top top",
         end: "top 20%",
-        scrub: true,
+        scrub: 1,
       },
     }
   );
