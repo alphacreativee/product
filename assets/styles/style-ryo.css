@@ -1,0 +1,108 @@
+section.product-detail {
+  height: 100vh;
+}
+
+section.product-detail .wrapper-image {
+  width: max-content;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+section.product-detail img {
+  width: auto;
+  height: 730px;
+  object-fit: contain;
+}
+
+section.product-detail .img{
+    position: relative;
+}
+
+section.product-detail .button-circle[data-tab="tab1"]{
+    position: absolute;
+    left: 64%;
+    top: 34.5%;
+}
+
+section.product-detail .button-circle[data-tab="tab2"]{
+    position: absolute;
+    left: 51.5%;
+    top: 57%;
+}
+
+section.product-detail .button-circle[data-tab="tab3"]{
+    position: absolute;
+    left: 20%;
+    top: 72%;
+}
+
+.button-circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: border 0.3s ease-in;
+  cursor: pointer;
+}
+
+.button-circle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.button-circle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  transform-origin: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  color: #fff;
+  animation: scalebutton 4s infinite;
+}
+
+.button-circle svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: opacity 300ms;
+  opacity: 0;
+}
+
+@keyframes scalebutton {
+  0% {
+    opacity: 0;
+    border-width: 2px;
+    transform: scale(0);
+    background-color: currentColor;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    border-width: 2px;
+    background-color: currentColor;
+  }
+  100% {
+    opacity: 0;
+    border-width: 1px;
+    background-color: transparent;
+    transform: scale(2);
+  }
+}
