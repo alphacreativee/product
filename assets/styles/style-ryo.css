@@ -101,6 +101,7 @@ section.product-detail .content.active{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 section.product-detail .content.active .wrapper-image{
@@ -198,6 +199,7 @@ section.product-detail .content.active.tab2 .img img{
 
 section.product-detail .content.active.tab3 .img img{
     transform: scale(2) translate(100px, -90px);
+    transition-duration: 0.7s;
 }
 
 .button-circle {
