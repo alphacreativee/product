@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Genath';
+    src: url('Genath-Regular.eot');
+    src: url('Genath-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Genath-Regular.woff2') format('woff2'),
+        url('Genath-Regular.woff') format('woff'),
+        url('Genath-Regular.ttf') format('truetype'),
+        url('Genath-Regular.svg#Genath-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
