@@ -111,6 +111,15 @@ function hero() {
       },
     }
   );
+  // gsap.to(".hero", {
+  //   height: "650vh",
+  //   scrollTrigger: {
+  //     trigger: ".details",
+  //     start: "top 20%", // Khi `.details` sắp xuất hiện trong viewport
+  //     markers: true,
+  //     onEnter: () => ScrollTrigger.refresh(), // Cập nhật lại ScrollTrigger
+  //   },
+  // });
 }
 
 const init = () => {
