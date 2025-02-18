@@ -50,6 +50,7 @@ function intro() {
         scrub: 1,
         pin: "canvas",
         end: "500%",
+        markers: true,
       },
       onUpdate: render,
     });
@@ -67,8 +68,37 @@ function intro() {
     }
   }
 }
+function hero() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    ".hero__img",
+    { scale: 0.9 },
+    { scale: 1, duration: 2, ease: "power2.out" }
+  );
+
+  gsap.fromTo(
+    ".hero__img",
+    { scale: 1 },
+    {
+      scale: 2,
+      // opacity: 0,
+      ease: "sine.out",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "+=50%",
+        scrub: true,
+        // markers: true,
+        pin: true,
+      },
+    }
+  );
+}
+
 const init = () => {
   intro(); // Apply scroll-triggered animations
+  hero();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
