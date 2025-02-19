@@ -1,5 +1,6 @@
 import { preloadImages } from "../libs/utils.js";
 let lenis;
+Splitting();
 function intro() {
   lenis = new Lenis({
     lerp: 0.2, // Lower values create a smoother scroll effect
@@ -172,7 +173,6 @@ function hero() {
         scrub: true,
         // markers: true,
         pin: true,
-        pinSpacing: true,
       },
     }
   );
@@ -192,21 +192,79 @@ function hero() {
       },
     }
   );
-  // gsap.to(".hero", {
-  //   height: "650vh",
-  //   scrollTrigger: {
-  //     trigger: ".details",
-  //     start: "top 20%", // Khi `.details` sắp xuất hiện trong viewport
-  //     markers: true,
-  //     onEnter: () => ScrollTrigger.refresh(), // Cập nhật lại ScrollTrigger
-  //   },
-  // });
 }
 
+function animationText() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".data-fade-in").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+          end: "bottom 85%",
+          // markers: true,
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "sine.out",
+        stagger: {
+          amount: 0.3,
+        },
+      }
+    );
+  });
+}
+function text() {
+  const fx1Titles = [
+    ...document.querySelectorAll(
+      ".details__title[data-splitting][data-effect-one]"
+    ),
+  ];
+  fx1Titles.forEach((title) => {
+    const chars = title.querySelectorAll(".char");
+
+    chars.forEach((char) => gsap.set(char.parentNode, { perspective: 1000 }));
+
+    gsap.fromTo(
+      chars,
+      {
+        "will-change": "opacity, transform",
+        transformOrigin: "50% 0%",
+        opacity: 0,
+        rotationX: -90,
+        z: -200,
+      },
+      {
+        ease: "power1",
+        opacity: 1,
+        stagger: 0.05,
+        rotationX: 0,
+        z: 0,
+        scrollTrigger: {
+          trigger: title,
+          start: "center bottom",
+          end: "bottom top+=50%",
+          // scrub: true,
+          // markers: true,
+        },
+      }
+    );
+  });
+}
 const init = () => {
   intro();
   productDetail();
   hero();
+  animationText();
+  text();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
