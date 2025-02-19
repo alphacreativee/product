@@ -90,37 +90,55 @@ function productDetail() {
     let dataTab = thisButton.data("tab");
 
     let thisSection = thisButton.closest("section.product-detail");
-    let moreClassSection = '';
-    if(thisSection.hasClass("product-2")){
-      moreClassSection = '.product-2';
+    let moreClassSection = "";
+    if (thisSection.hasClass("product-2")) {
+      moreClassSection = ".product-2";
     }
 
     if (thisButton.hasClass("open")) {
-      $(`section.product-detail${moreClassSection} .content`).removeClass("active").removeClass(dataTab);
+      $(`section.product-detail${moreClassSection} .content`)
+        .removeClass("active")
+        .removeClass(dataTab);
       $(`section.product-detail${moreClassSection} .tab`).removeClass("active");
-      $(`section.product-detail${moreClassSection} .list-button .button-circle`).removeClass("d-none").removeClass("open");
-  
-      $(`section.product-detail${moreClassSection} .wrapper-content`).stop().animate({
-        width: 0
-      }, 1000);
-    }
-     else {
+      $(`section.product-detail${moreClassSection} .list-button .button-circle`)
+        .removeClass("d-none")
+        .removeClass("open");
+
+      $(`section.product-detail${moreClassSection} .wrapper-content`)
+        .stop()
+        .animate(
+          {
+            width: 0,
+          },
+          1000
+        );
+    } else {
       thisButton.addClass("open");
       thisButton.siblings().addClass("d-none");
-  
-      $(`section.product-detail${moreClassSection} .content`).addClass("active").addClass(dataTab);
+
+      $(`section.product-detail${moreClassSection} .content`)
+        .addClass("active")
+        .addClass(dataTab);
       $(`section.product-detail${moreClassSection} .tab`).removeClass("active");
-      $(`section.product-detail${moreClassSection} [detail-${dataTab}]`).addClass("active");
-  
-      let contentWidth = $("section.product-detail .wrapper-content")[0].scrollWidth;
+      $(
+        `section.product-detail${moreClassSection} [detail-${dataTab}]`
+      ).addClass("active");
+
+      let contentWidth = $("section.product-detail .wrapper-content")[0]
+        .scrollWidth;
       let viewWidth = $(window).width() / 2;
       if (viewWidth > 600) {
         viewWidth = 600;
       }
-  
-      $(`section.product-detail${moreClassSection} .wrapper-content`).stop().animate({
-        width: viewWidth
-      }, 1000);
+
+      $(`section.product-detail${moreClassSection} .wrapper-content`)
+        .stop()
+        .animate(
+          {
+            width: viewWidth,
+          },
+          1000
+        );
     }
   });
 }
@@ -184,7 +202,8 @@ function hero() {
         trigger: ".intro",
         start: "top top",
         end: "top 20%",
-        scrub: 1,
+        scrub: true,
+        // markers: true,
       },
     }
   );
