@@ -356,6 +356,7 @@ function changeVariantProduct() {
         end: "bottom top",
         scrub: 1,
         duration: 1,
+        ease: "power4",
         //markers: true
       },
     });

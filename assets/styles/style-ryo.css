@@ -368,6 +368,7 @@ section.product-variant .content-top__image {
   aspect-ratio: 438 / 480;
   position: relative;
   z-index: 2;
+  margin-top: 40px;
 }
 
 section.product-variant .content-top__image img {
