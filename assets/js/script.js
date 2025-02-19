@@ -163,8 +163,8 @@ function animateZoomIn() {
           start: "top top",
           end: "+=100%",
           scrub: 0.5,
-          // markers: true,
           pin: true,
+          // markers: true,
           onEnterBack: () => {
             $(this).removeClass("done");
 
