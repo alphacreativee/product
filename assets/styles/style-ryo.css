@@ -38,6 +38,11 @@ section.product-detail.product-2 .button-circle[data-tab="tab2"]{
     top: 62%;
 }
 
+section.product-detail.product-2 .button-circle.open[data-tab="tab2"]{
+    left: 30%;
+    top: 80%;
+}
+
 section.product-detail .button-circle[data-tab="tab2"]{
     position: absolute;
     left: 51.5%;
