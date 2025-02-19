@@ -162,7 +162,7 @@ function animateZoomIn() {
           trigger: this,
           start: "top top",
           end: "+=100%",
-          scrub: 1,
+          scrub: 0.5,
           // markers: true,
           pin: true,
           onEnterBack: () => {
@@ -193,6 +193,7 @@ function animateZoomIn() {
       }
     );
   });
+  ScrollTrigger.refresh();
 }
 
 function parallaxIt(e, target, movement) {

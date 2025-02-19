@@ -102,6 +102,9 @@ body {
 .splitting .word {
   white-space: nowrap;
 }
+.animate-zoomin {
+  will-change: transform;
+}
 @media screen and (max-width: 1024px) {
   .ball-text {
     font-size: 2rem;
