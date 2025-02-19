@@ -155,13 +155,13 @@ function animateZoomIn() {
       $(this).find(".wrapper-image .img"),
       {
         scale: "1.5",
-        // y: 100
+        y: 100,
       },
       {
         scrollTrigger: {
           trigger: this,
           start: "top top",
-          end: "bottom center",
+          end: "+=100%",
           scrub: 1,
           // markers: true,
           pin: true,
@@ -183,7 +183,7 @@ function animateZoomIn() {
           },
         },
         scale: "1",
-        // y: 0,
+        y: 0,
         duration: 2,
         ease: "none",
         stagger: 0.1,
