@@ -80,7 +80,7 @@ body {
 
 .details {
   text-align: center;
-  padding: 80px 0;
+  padding: 120px 0;
 }
 .details h1 {
   font-family: var(--font-heading);
@@ -88,6 +88,7 @@ body {
   line-height: 72px;
   color: #000;
   margin-bottom: 24px;
+  overflow: hidden;
 }
 .details p {
   font-family: var(--font-body);
@@ -95,8 +96,12 @@ body {
   line-height: 24px;
   color: #111;
   font-weight: 400;
+  overflow: hidden;
+  margin-bottom: 24px;
 }
-
+.splitting .word {
+  white-space: nowrap;
+}
 @media screen and (max-width: 1024px) {
   .ball-text {
     font-size: 2rem;

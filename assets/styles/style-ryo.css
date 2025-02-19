@@ -1,7 +1,3 @@
-body{
-    background-color: #F5F5F5;
-}
-
 section.product-detail {
   height: 100vh;
 }
@@ -21,15 +17,15 @@ section.product-detail img {
   transition-duration: 0.7s;
 }
 
-section.product-detail .img{
-    position: relative;
-    transition-duration: 0.5s;
+section.product-detail .img {
+  position: relative;
+  transition-duration: 0.5s;
 }
 
-section.product-detail .button-circle[data-tab="tab1"]{
-    position: absolute;
-    left: 64%;
-    top: 34.5%;
+section.product-detail .button-circle[data-tab="tab1"] {
+  position: absolute;
+  left: 64%;
+  top: 34.5%;
 }
 
 section.product-detail.product-2 .button-circle[data-tab="tab1"]{
@@ -48,31 +44,31 @@ section.product-detail .button-circle[data-tab="tab2"]{
     top: 57%;
 }
 
-section.product-detail .button-circle[data-tab="tab3"]{
-    position: absolute;
-    left: 20%;
-    top: 72%;
+section.product-detail .button-circle[data-tab="tab3"] {
+  position: absolute;
+  left: 20%;
+  top: 72%;
 }
 
-section.product-detail .button-circle .text{
-    color: #ffffff;
-    text-shadow: 0 0 3px rgba(24, 24, 24, 0.8);
-    font-weight: normal;
-    font-stretch: normal;
-    letter-spacing: 1px;
-    font-size: 12px;
-    line-height: 1;
-    text-transform: uppercase;
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 150px;
-    height: 12px;
-    transform: translateY(-50%) !important;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+section.product-detail .button-circle .text {
+  color: #ffffff;
+  text-shadow: 0 0 3px rgba(24, 24, 24, 0.8);
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 150px;
+  height: 12px;
+  transform: translateY(-50%) !important;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
 section.product-detail .button-circle .text::after{
@@ -87,63 +83,63 @@ section.product-detail .button-circle .text::after{
 }
 
 section.product-detail .button-circle:hover .text,
-section.product-detail .button-circle.open .text{
-    opacity: 1;
-    visibility: visible;
+section.product-detail .button-circle.open .text {
+  opacity: 1;
+  visibility: visible;
 }
 
-section.product-detail .button-circle.open .text{
-    margin-left: 5px;
+section.product-detail .button-circle.open .text {
+  margin-left: 5px;
 }
 
-section.product-detail .button-circle.open .text::after{
-    content: "CLOSE";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+section.product-detail .button-circle.open .text::after {
+  content: "CLOSE";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
-section.product-detail .list-button{
-    width: 40px;
-    height: 0;
+section.product-detail .list-button {
+  width: 40px;
+  height: 0;
 }
 
-section.product-detail .content.active{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
+section.product-detail .content.active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
-section.product-detail .content.active .wrapper-image{
-    max-width: 50%;
+section.product-detail .content.active .wrapper-image {
+  max-width: 50%;
 }
 
-section.product-detail .wrapper-content{
-    width: 0;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+section.product-detail .wrapper-content {
+  width: 0;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-section.product-detail .content.active .wrapper-content{
-    /* max-width: 50%; */
+section.product-detail .content.active .wrapper-content {
+  /* max-width: 50%; */
 }
 
-section.product-detail .content{
-    width: 100%;
-    display: flex;
+section.product-detail .content {
+  width: 100%;
+  display: flex;
 }
 
-section.product-detail .wrapper-content .tab{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
-    padding: 64px;
+section.product-detail .wrapper-content .tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  padding: 64px;
 
     display: flex;
     flex-direction: column;
@@ -158,46 +154,46 @@ section.product-detail .content.active .tab{
     transition-delay: 0.7s;
 }
 
-section.product-detail .content.active .tab.active{
-    z-index: 2;
+section.product-detail .content.active .tab.active {
+  z-index: 2;
 }
 
-section.product-detail .wrapper-content .tab-img{
-    width: 100%;
-    aspect-ratio: 465 / 348;
-    margin-top: 40px;
+section.product-detail .wrapper-content .tab-img {
+  width: 100%;
+  aspect-ratio: 465 / 348;
+  margin-top: 40px;
 }
 
-section.product-detail .wrapper-content .tab img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+section.product-detail .wrapper-content .tab img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-section.product-detail .wrapper-content .tab .desc{
-    margin-top: 24px;
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-    color: #111111;
-    font-family: var(--font-body);
+section.product-detail .wrapper-content .tab .desc {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #111111;
+  font-family: var(--font-body);
 }
 
-section.product-detail .wrapper-content .tab .title{
-    font-size: 36px;
-    line-height: 43px;
-    color: #000;
-    font-family: var(--font-heading);
-    margin-bottom: 0;
+section.product-detail .wrapper-content .tab .title {
+  font-size: 36px;
+  line-height: 43px;
+  color: #000;
+  font-family: var(--font-heading);
+  margin-bottom: 0;
 }
 
-section.product-detail .content.active .img img{
-    transition-delay: 1s;
+section.product-detail .content.active .img img {
+  transition-delay: 1s;
 }
 
-section.product-detail .content.active.tab1 .img img{
-    transform: scale(2.5) translate(-100px, 100px);
-    transition-duration: 0.7s;
+section.product-detail .content.active.tab1 .img img {
+  transform: scale(2.5) translate(-100px, 100px);
+  transition-duration: 0.7s;
 }
 
 section.product-detail.product-2 .content.active.tab1 .img img{
@@ -213,14 +209,14 @@ section.product-detail .content.active.tab1 .button-circle[data-tab="tab1"]{
     top: 55%;
 }
 
-section.product-detail .content.active.tab2 .img img{
-    transform: scale(2.5) translate(-20px, 0);
-    transition-duration: 0.7s;
+section.product-detail .content.active.tab2 .img img {
+  transform: scale(2.5) translate(-20px, 0);
+  transition-duration: 0.7s;
 }
 
-section.product-detail .content.active.tab3 .img img{
-    transform: scale(2) translate(100px, -90px);
-    transition-duration: 0.7s;
+section.product-detail .content.active.tab3 .img img {
+  transform: scale(2) translate(100px, -90px);
+  transition-duration: 0.7s;
 }
 
 .button-circle {
@@ -244,10 +240,10 @@ section.product-detail .content.active.tab3 .img img{
   border: 2px solid #fff;
 }
 
-.button-circle.open::before{
-    width: 30px;
-    height: 30px;
-    border: none;
+.button-circle.open::before {
+  width: 30px;
+  height: 30px;
+  border: none;
 }
 
 .button-circle::after {
@@ -268,22 +264,22 @@ section.product-detail .content.active.tab3 .img img{
   z-index: 2;
 }
 
-.button-circle.open::after{
-    background-color: transparent;
-    background-image: url("../images/svg/product-detail-close.svg");
-    background-size: cover;
-    animation: none;
-    width: 30px;
-    height: 30px;
-    margin-top: -15px;
-    margin-left: -15px;
-    border: none;
+.button-circle.open::after {
+  background-color: transparent;
+  background-image: url("../images/svg/product-detail-close.svg");
+  background-size: cover;
+  animation: none;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border: none;
 }
 
-.button-circle.open{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.button-circle.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-circle svg {
