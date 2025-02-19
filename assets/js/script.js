@@ -355,11 +355,27 @@ function changeVariantProduct() {
         start: "top bottom",
         end: "bottom top",
         scrub: 1,
-        duration: 1
+        duration: 1,
         //markers: true
-      }
+      },
     });
   });
+  gsap.fromTo(
+    ".product-sku",
+    { autoAlpha: 0 },
+    {
+      autoAlpha: 1,
+      ease: "sine.out",
+      scrollTrigger: {
+        trigger: ".product-variant",
+        start: "top 15%",
+        end: "+=100%",
+        scrub: true,
+        markers: true,
+        pin: true,
+      },
+    }
+  );
 }
 
 const init = () => {
