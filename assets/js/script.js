@@ -325,6 +325,42 @@ function text() {
     );
   });
 }
+
+function changeVariantProduct() {
+  const buttonVariants = $("section.product-variant .content-pagination li");
+
+  buttonVariants.on("click", function () {
+    let thisButton = $(this);
+    let dataVariant = thisButton.data("variant");
+
+    thisButton.addClass("active");
+    thisButton.siblings().removeClass("active");
+
+    $("section.product-variant .content-top__image img").removeClass("active");
+    $(
+      `section.product-variant .content-top__image img[data-variant='${dataVariant}']`
+    ).addClass("active");
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".js-parallax").forEach((wrap) => {
+    const y = wrap.getAttribute("data-y") || -100;
+
+    gsap.to(wrap, {
+      y: y,
+      scrollTrigger: {
+        trigger: wrap,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        duration: 1
+        //markers: true
+      }
+    });
+  });
+}
+
 const init = () => {
   intro();
   productDetail();
@@ -332,6 +368,7 @@ const init = () => {
   animationText();
   text();
   animateZoomIn();
+  changeVariantProduct();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
