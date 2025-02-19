@@ -327,3 +327,13 @@ section.product-detail .content.active.tab3 .img img {
     transform: scale(2);
   }
 }
+
+@media (max-width: 1600px) {
+  section.product-detail .img {
+    height: 600px;
+  }
+
+  section.product-detail img {
+    height: 600px;
+  }
+}
