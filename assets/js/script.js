@@ -4,7 +4,7 @@ Splitting();
 function intro() {
   lenis = new Lenis({
     lerp: 0.2, // Lower values create a smoother scroll effect
-    smoothWheel: true, // Enables smooth scrolling for mouse wheel events
+    smoothWheel: true // Enables smooth scrolling for mouse wheel events
   });
 
   // Update ScrollTrigger each time the user scrolls
@@ -51,10 +51,10 @@ function intro() {
         scrub: 1,
         pin: "canvas",
         end: "500%",
-        pinSpacing: false,
+        pinSpacing: false
         // markers: true,
       },
-      onUpdate: render,
+      onUpdate: render
     });
 
     render();
@@ -95,8 +95,6 @@ function productDetail() {
       moreClassSection = ".product-2";
     }
 
-    console.log(moreClassSection);
-
     if (thisButton.hasClass("open")) {
       closeTabProductDetail(moreClassSection, dataTab);
     } else {
@@ -120,7 +118,7 @@ function productDetail() {
         .stop()
         .animate(
           {
-            width: viewWidth,
+            width: viewWidth
           },
           1000
         );
@@ -141,7 +139,7 @@ function closeTabProductDetail(moreClassSection, dataTab) {
     .stop()
     .animate(
       {
-        width: 0,
+        width: 0
       },
       1000
     );
@@ -155,7 +153,7 @@ function animateZoomIn() {
       $(this).find(".wrapper-image .img"),
       {
         scale: "1.5",
-        y: 100,
+        y: 100
       },
       {
         scrollTrigger: {
@@ -181,6 +179,13 @@ function animateZoomIn() {
           onLeaveBack: () => {
             $(this).removeClass("done");
           },
+          onUpdate: (self) => {
+            if (self.progress >= 0.8) {
+              $(this).addClass("done");
+            } else {
+              $(this).removeClass("done");
+            }
+          }
         },
         scale: "1",
         y: 0,
@@ -189,7 +194,7 @@ function animateZoomIn() {
         stagger: 0.1,
         onComplete: () => {
           $(this).addClass("done");
-        },
+        }
       }
     );
   });
@@ -208,7 +213,7 @@ function parallaxIt(e, target, movement) {
   TweenMax.to($this, 0.3, {
     x: parallaxX - movement / 2,
     y: parallaxY - movement / 2,
-    ease: Power2.easeOut,
+    ease: Power2.easeOut
   });
 }
 
@@ -239,15 +244,15 @@ function hero() {
         end: "+=100%",
         scrub: true,
         // markers: true,
-        pin: true,
-      },
+        pin: true
+      }
     }
   );
 
   gsap.fromTo(
     ".intro",
     {
-      autoAlpha: 0,
+      autoAlpha: 0
     },
     {
       autoAlpha: 1,
@@ -255,8 +260,8 @@ function hero() {
         trigger: ".intro",
         start: "top top",
         end: "top 20%",
-        scrub: 1,
-      },
+        scrub: 1
+      }
     }
   );
 }
@@ -269,13 +274,13 @@ function animationText() {
       element,
       {
         opacity: 0,
-        y: 20,
+        y: 20
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 85%",
-          end: "bottom 85%",
+          end: "bottom 85%"
           // markers: true,
         },
         opacity: 1,
@@ -283,8 +288,8 @@ function animationText() {
         duration: 1,
         ease: "sine.out",
         stagger: {
-          amount: 0.3,
-        },
+          amount: 0.3
+        }
       }
     );
   });
@@ -293,7 +298,7 @@ function text() {
   const fx1Titles = [
     ...document.querySelectorAll(
       ".details__title[data-splitting][data-effect-one]"
-    ),
+    )
   ];
   fx1Titles.forEach((title) => {
     const chars = title.querySelectorAll(".char");
@@ -307,7 +312,7 @@ function text() {
         transformOrigin: "50% 0%",
         opacity: 0,
         rotationX: -90,
-        z: -200,
+        z: -200
       },
       {
         ease: "power1",
@@ -318,10 +323,10 @@ function text() {
         scrollTrigger: {
           trigger: title,
           start: "center bottom",
-          end: "bottom top+=50%",
+          end: "bottom top+=50%"
           // scrub: true,
           // markers: true,
-        },
+        }
       }
     );
   });
@@ -356,25 +361,51 @@ function changeVariantProduct() {
         end: "bottom top",
         scrub: 1,
         duration: 1,
-        ease: "power4",
+        ease: "power4"
         //markers: true
-      },
+      }
     });
   });
+  // Pin .product-variant khi chạm vào header
+  gsap.to(".product-variant", {
+    scrollTrigger: {
+      trigger: ".product-variant",
+      start: "top top", // Khi phần tử chạm vào header
+      end: "+=150%", // Giữ pin đến khi cuộn 150% chiều cao section
+      scrub: true,
+      pin: true // Giữ cố định
+      // markers: true // Debug, có thể xóa sau khi kiểm tra
+    }
+  });
+
+  // Hiệu ứng opacity của .product-sku và .product-variant-content
   gsap.fromTo(
     ".product-sku",
     { autoAlpha: 0 },
     {
       autoAlpha: 1,
-      ease: "sine.out",
+      ease: "none", // Chuyển động đều đặn, không tăng giảm tốc
       scrollTrigger: {
         trigger: ".product-variant",
-        start: "top 15%",
-        end: "+=100%",
-        scrub: true,
-        markers: true,
-        pin: true,
-      },
+        start: "top top", // Bắt đầu thay đổi opacity khi pin bắt đầu
+        end: "bottom top", // Hoàn thành opacity = 1 khi cuộn đến cuối vùng pin
+        scrub: true
+      }
+    }
+  );
+
+  gsap.fromTo(
+    ".product-variant-content",
+    { autoAlpha: 1 },
+    {
+      autoAlpha: 0,
+      ease: "none", // Chuyển động đều đặn, không tăng giảm tốc
+      scrollTrigger: {
+        trigger: ".product-variant",
+        start: "top top", // Bắt đầu giảm opacity khi pin bắt đầu
+        end: "bottom top", // Hoàn thành opacity = 0 khi cuộn đến cuối vùng pin
+        scrub: true
+      }
     }
   );
 }
