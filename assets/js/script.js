@@ -70,50 +70,60 @@ function intro() {
   }
 }
 
-function productDetail(){
+function productDetail() {
   $(".list-button").mousemove(function (e) {
     callParallax(e);
   });
-  
+
   $(".list-button").mouseleave(function (e) {
     TweenMax.to(this, 0.3, { height: 0, width: 40 });
     TweenMax.to(".button-circle", 0.3, { scale: 1, x: 0, y: 0 });
   });
-  
+
   $(".list-button .button-circle").mouseenter(function (e) {
     TweenMax.to(this, 0.3, { scale: 1.4 });
   });
 
-  $(".list-button .button-circle").on("click", function(e) {
+  $(".list-button .button-circle").on("click", function (e) {
     let thisButton = $(e.currentTarget);
     let dataTab = thisButton.data("tab");
 
     if (thisButton.hasClass("open")) {
-      $("section.product-detail .content").removeClass("active").removeClass(dataTab);
+      $("section.product-detail .content")
+        .removeClass("active")
+        .removeClass(dataTab);
       $("section.product-detail .tab").removeClass("active");
-      $(".list-button .button-circle").removeClass("d-none").removeClass("open");
-  
-      $("section.product-detail .wrapper-content").stop().animate({
-        width: 0
-      }, 1000);
-    }
-     else {
+      $(".list-button .button-circle")
+        .removeClass("d-none")
+        .removeClass("open");
+
+      $("section.product-detail .wrapper-content").stop().animate(
+        {
+          width: 0,
+        },
+        1000
+      );
+    } else {
       thisButton.addClass("open");
       thisButton.siblings().addClass("d-none");
-  
+
       $("section.product-detail .content").addClass("active").addClass(dataTab);
       $("section.product-detail .tab").removeClass("active");
       $(`section.product-detail [detail-${dataTab}]`).addClass("active");
-  
-      let contentWidth = $("section.product-detail .wrapper-content")[0].scrollWidth;
+
+      let contentWidth = $("section.product-detail .wrapper-content")[0]
+        .scrollWidth;
       let viewWidth = $(window).width() / 2;
       if (viewWidth > 600) {
         viewWidth = 600;
       }
-  
-      $("section.product-detail .wrapper-content").stop().animate({
-        width: viewWidth
-      }, 1000);
+
+      $("section.product-detail .wrapper-content").stop().animate(
+        {
+          width: viewWidth,
+        },
+        1000
+      );
     }
   });
 }
@@ -162,6 +172,7 @@ function hero() {
         scrub: true,
         // markers: true,
         pin: true,
+        pinSpacing: true,
       },
     }
   );
