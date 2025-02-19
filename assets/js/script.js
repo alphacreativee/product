@@ -90,10 +90,12 @@ function productDetail() {
     let dataTab = thisButton.data("tab");
 
     let thisSection = thisButton.closest("section.product-detail");
-    let moreClassSection = "";
+    let moreClassSection = ".product-1";
     if (thisSection.hasClass("product-2")) {
       moreClassSection = ".product-2";
     }
+
+    console.log(moreClassSection);
 
     if (thisButton.hasClass("open")) {
       closeTabProductDetail(moreClassSection, dataTab);
@@ -161,7 +163,7 @@ function animateZoomIn() {
           start: "top top",
           end: "bottom center",
           scrub: 1,
-          // markers: true,
+          markers: true,
           pin: true,
           onEnterBack: () => {
             $(this).removeClass("done");
