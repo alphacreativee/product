@@ -4,7 +4,7 @@ Splitting();
 function intro() {
   lenis = new Lenis({
     lerp: 0.2, // Lower values create a smoother scroll effect
-    smoothWheel: true, // Enables smooth scrolling for mouse wheel events
+    smoothWheel: true // Enables smooth scrolling for mouse wheel events
   });
 
   // Update ScrollTrigger each time the user scrolls
@@ -51,10 +51,10 @@ function intro() {
         scrub: 1,
         pin: "canvas",
         end: "500%",
-        pinSpacing: false,
+        pinSpacing: false
         // markers: true,
       },
-      onUpdate: render,
+      onUpdate: render
     });
 
     render();
@@ -90,38 +90,106 @@ function productDetail() {
     let dataTab = thisButton.data("tab");
 
     let thisSection = thisButton.closest("section.product-detail");
-    let moreClassSection = '';
-    if(thisSection.hasClass("product-2")){
-      moreClassSection = '.product-2';
+    let moreClassSection = "";
+    if (thisSection.hasClass("product-2")) {
+      moreClassSection = ".product-2";
     }
 
     if (thisButton.hasClass("open")) {
-      $(`section.product-detail${moreClassSection} .content`).removeClass("active").removeClass(dataTab);
-      $(`section.product-detail${moreClassSection} .tab`).removeClass("active");
-      $(`section.product-detail${moreClassSection} .list-button .button-circle`).removeClass("d-none").removeClass("open");
-  
-      $(`section.product-detail${moreClassSection} .wrapper-content`).stop().animate({
-        width: 0
-      }, 1000);
-    }
-     else {
+      closeTabProductDetail(moreClassSection, dataTab);
+    } else {
       thisButton.addClass("open");
       thisButton.siblings().addClass("d-none");
-  
-      $(`section.product-detail${moreClassSection} .content`).addClass("active").addClass(dataTab);
+
+      $(`section.product-detail${moreClassSection} .content`)
+        .addClass("active")
+        .addClass(dataTab);
       $(`section.product-detail${moreClassSection} .tab`).removeClass("active");
-      $(`section.product-detail${moreClassSection} [detail-${dataTab}]`).addClass("active");
-  
-      let contentWidth = $("section.product-detail .wrapper-content")[0].scrollWidth;
+      $(
+        `section.product-detail${moreClassSection} [detail-${dataTab}]`
+      ).addClass("active");
+
       let viewWidth = $(window).width() / 2;
       if (viewWidth > 600) {
         viewWidth = 600;
       }
-  
-      $(`section.product-detail${moreClassSection} .wrapper-content`).stop().animate({
-        width: viewWidth
-      }, 1000);
+
+      $(`section.product-detail${moreClassSection} .wrapper-content`)
+        .stop()
+        .animate(
+          {
+            width: viewWidth
+          },
+          1000
+        );
     }
+  });
+}
+
+function closeTabProductDetail(moreClassSection, dataTab) {
+  $(`section.product-detail${moreClassSection} .content`)
+    .removeClass("active")
+    .removeClass(dataTab);
+  $(`section.product-detail${moreClassSection} .tab`).removeClass("active");
+  $(`section.product-detail${moreClassSection} .list-button .button-circle`)
+    .removeClass("d-none")
+    .removeClass("open");
+
+  $(`section.product-detail${moreClassSection} .wrapper-content`)
+    .stop()
+    .animate(
+      {
+        width: 0
+      },
+      1000
+    );
+}
+
+function animateZoomIn() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  $(".animate-zoomin").each(function () {
+    gsap.fromTo(
+      $(this).find(".wrapper-image .img"),
+      {
+        scale: "1.5"
+        // y: 100
+      },
+      {
+        scrollTrigger: {
+          trigger: this,
+          start: "top top",
+          end: "bottom center",
+          scrub: 1,
+          // markers: true,
+          pin: true,
+          onEnterBack: () => {
+            $(this).removeClass("done");
+
+            let thisButton = $(this).find(".list-button .button-circle.open");
+            let moreClassSection = "";
+            if ($(this).hasClass("product-2")) {
+              moreClassSection = ".product-2";
+            }
+
+            let dataTab = thisButton.data("tab");
+
+            closeTabProductDetail(moreClassSection, dataTab);
+          },
+          onLeaveBack: () => {
+            $(this).removeClass("done");
+          }
+        },
+        scale: "1",
+        // y: 0,
+        duration: 2,
+        ease: "none",
+        stagger: 0.1,
+        onComplete: () => {
+          $(this).addClass("done");
+        }
+      }
+    );
   });
 }
 
@@ -137,7 +205,7 @@ function parallaxIt(e, target, movement) {
   TweenMax.to($this, 0.3, {
     x: parallaxX - movement / 2,
     y: parallaxY - movement / 2,
-    ease: Power2.easeOut,
+    ease: Power2.easeOut
   });
 }
 
@@ -168,15 +236,15 @@ function hero() {
         end: "+=100%",
         scrub: true,
         // markers: true,
-        pin: true,
-      },
+        pin: true
+      }
     }
   );
 
   gsap.fromTo(
     ".intro",
     {
-      autoAlpha: 0,
+      autoAlpha: 0
     },
     {
       autoAlpha: 1,
@@ -184,8 +252,8 @@ function hero() {
         trigger: ".intro",
         start: "top top",
         end: "top 20%",
-        scrub: 1,
-      },
+        scrub: 1
+      }
     }
   );
 }
@@ -198,13 +266,13 @@ function animationText() {
       element,
       {
         opacity: 0,
-        y: 100,
+        y: 100
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 85%",
-          end: "bottom 85%",
+          end: "bottom 85%"
           // markers: true,
         },
         opacity: 1,
@@ -212,8 +280,8 @@ function animationText() {
         duration: 1,
         ease: "sine.out",
         stagger: {
-          amount: 0.3,
-        },
+          amount: 0.3
+        }
       }
     );
   });
@@ -222,7 +290,7 @@ function text() {
   const fx1Titles = [
     ...document.querySelectorAll(
       ".details__title[data-splitting][data-effect-one]"
-    ),
+    )
   ];
   fx1Titles.forEach((title) => {
     const chars = title.querySelectorAll(".char");
@@ -236,7 +304,7 @@ function text() {
         transformOrigin: "50% 0%",
         opacity: 0,
         rotationX: -90,
-        z: -200,
+        z: -200
       },
       {
         ease: "power1",
@@ -247,10 +315,10 @@ function text() {
         scrollTrigger: {
           trigger: title,
           start: "center bottom",
-          end: "bottom top+=50%",
+          end: "bottom top+=50%"
           // scrub: true,
           // markers: true,
-        },
+        }
       }
     );
   });
@@ -261,6 +329,7 @@ const init = () => {
   hero();
   animationText();
   text();
+  animateZoomIn();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body

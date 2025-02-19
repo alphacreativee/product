@@ -20,6 +20,7 @@ section.product-detail img {
 section.product-detail .img {
   position: relative;
   transition-duration: 0.5s;
+  height: 730px;
 }
 
 section.product-detail .button-circle[data-tab="tab1"] {
@@ -28,25 +29,25 @@ section.product-detail .button-circle[data-tab="tab1"] {
   top: 34.5%;
 }
 
-section.product-detail.product-2 .button-circle[data-tab="tab1"]{
-    left: 48%;
-    top: 47%;
+section.product-detail.product-2 .button-circle[data-tab="tab1"] {
+  left: 48%;
+  top: 47%;
 }
 
-section.product-detail.product-2 .button-circle[data-tab="tab2"]{
-    left: 21%;
-    top: 62%;
+section.product-detail.product-2 .button-circle[data-tab="tab2"] {
+  left: 21%;
+  top: 62%;
 }
 
-section.product-detail.product-2 .button-circle.open[data-tab="tab2"]{
-    left: 30%;
-    top: 80%;
+section.product-detail.product-2 .button-circle.open[data-tab="tab2"] {
+  left: 30%;
+  top: 80%;
 }
 
-section.product-detail .button-circle[data-tab="tab2"]{
-    position: absolute;
-    left: 51.5%;
-    top: 57%;
+section.product-detail .button-circle[data-tab="tab2"] {
+  position: absolute;
+  left: 51.5%;
+  top: 57%;
 }
 
 section.product-detail .button-circle[data-tab="tab3"] {
@@ -76,15 +77,15 @@ section.product-detail .button-circle .text {
   transition: all 0.3s ease;
 }
 
-section.product-detail .button-circle .text::after{
-    content: attr(data-text);
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    font-size: 10px;
-    line-height: 12px;
-    font-family: var(--font-body);
+section.product-detail .button-circle .text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 10px;
+  line-height: 12px;
+  font-family: var(--font-body);
 }
 
 section.product-detail .button-circle:hover .text,
@@ -146,17 +147,17 @@ section.product-detail .wrapper-content .tab {
   background-color: #fff;
   padding: 64px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transform: translateX(100%);
-    transition-duration : 1s;
-    transition-delay: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateX(100%);
+  transition-duration: 1s;
+  transition-delay: 0.2s;
 }
 
-section.product-detail .content.active .tab{
-    transform: translateX(0);
-    transition-delay: 0.7s;
+section.product-detail .content.active .tab {
+  transform: translateX(0);
+  transition-delay: 0.7s;
 }
 
 section.product-detail .content.active .tab.active {
@@ -201,17 +202,17 @@ section.product-detail .content.active.tab1 .img img {
   transition-duration: 0.7s;
 }
 
-section.product-detail.product-2 .content.active.tab1 .img img{
-    transform: scale(2.5) translate(40px, 20px);
+section.product-detail.product-2 .content.active.tab1 .img img {
+  transform: scale(2.5) translate(40px, 20px);
 }
 
-section.product-detail.product-2 .content.active.tab2 .img img{
-    transform: scale(2.5) translate(140px, -20px);
+section.product-detail.product-2 .content.active.tab2 .img img {
+  transform: scale(2.5) translate(140px, -20px);
 }
 
-section.product-detail .content.active.tab1 .button-circle[data-tab="tab1"]{
-    left: 60%;
-    top: 55%;
+section.product-detail .content.active.tab1 .button-circle[data-tab="tab1"] {
+  left: 60%;
+  top: 55%;
 }
 
 section.product-detail .content.active.tab2 .img img {
@@ -231,6 +232,15 @@ section.product-detail .content.active.tab3 .img img {
   border-radius: 50%;
   transition: border 0.3s ease-in;
   cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.product-detail.animate-zoomin.done .button-circle {
+  opacity: 1;
+  visibility: visible;
 }
 
 .button-circle::before {
