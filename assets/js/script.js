@@ -420,6 +420,16 @@ const init = () => {
   text();
   animateZoomIn();
   changeVariantProduct();
+
+  document
+    .querySelectorAll(".button-custom")
+    .forEach(
+      (button) =>
+        (button.innerHTML =
+          "<div><span>" +
+          button.textContent.trim().split("").join("</span><span>") +
+          "</span></div>")
+    );
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
