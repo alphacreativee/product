@@ -338,10 +338,12 @@ function changeVariantProduct() {
   buttonVariants.on("click", function () {
     let thisButton = $(this);
     let dataVariant = thisButton.data("variant");
+    let dataRef = thisButton.data("ref");
 
     thisButton.addClass("active");
     thisButton.siblings().removeClass("active");
 
+    $("section.product-variant .content-top__sku span").text(dataRef);
     $("section.product-variant .content-top__image img").removeClass("active");
     $(
       `section.product-variant .content-top__image img[data-variant='${dataVariant}']`
