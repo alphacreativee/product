@@ -136,6 +136,7 @@ section.product-variant {
 .product-sku__container {
   position: relative;
   height: 660px;
+  /* max-height: 660px; */
 }
 .product-sku__img {
   width: auto;
