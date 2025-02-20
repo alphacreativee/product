@@ -94,6 +94,7 @@ function productDetail() {
     if (thisSection.hasClass("product-2")) {
       moreClassSection = ".product-2";
     }
+    thisSection.toggleClass("open");
 
     if (thisButton.hasClass("open")) {
       closeTabProductDetail(moreClassSection, dataTab);
@@ -158,11 +159,11 @@ function animateZoomIn() {
       {
         scrollTrigger: {
           trigger: this,
-          start: "top top",
+          start: "top 120%",
           end: "+=100%",
           scrub: 0.5,
-          pin: true,
-          // markers: true,
+          // pin: true,
+          markers: true,
           onEnterBack: () => {
             $(this).removeClass("done");
 
@@ -189,7 +190,7 @@ function animateZoomIn() {
         },
         scale: "1",
         y: 0,
-        duration: 2,
+        duration: 1.5,
         ease: "none",
         stagger: 0.1,
         onComplete: () => {
@@ -420,6 +421,16 @@ const init = () => {
   text();
   animateZoomIn();
   changeVariantProduct();
+
+  document
+    .querySelectorAll(".button-custom")
+    .forEach(
+      (button) =>
+        (button.innerHTML =
+          "<div><span>" +
+          button.textContent.trim().split("").join("</span><span>") +
+          "</span></div>")
+    );
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
