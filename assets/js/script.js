@@ -94,6 +94,7 @@ function productDetail() {
     if (thisSection.hasClass("product-2")) {
       moreClassSection = ".product-2";
     }
+    thisSection.toggleClass("open");
 
     if (thisButton.hasClass("open")) {
       closeTabProductDetail(moreClassSection, dataTab);

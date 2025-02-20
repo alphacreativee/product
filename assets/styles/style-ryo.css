@@ -118,6 +118,12 @@ section.product-detail .content.active {
   overflow: hidden;
 }
 
+/* section.product-detail.done.open {
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+} */
+
 section.product-detail .content.active .wrapper-image {
   max-width: 50%;
 }
