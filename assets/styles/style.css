@@ -125,9 +125,9 @@ section.product-variant {
 }
 .product-sku {
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   z-index: 4;
   opacity: 0;
   visibility: hidden;
