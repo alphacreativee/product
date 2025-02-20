@@ -76,14 +76,16 @@ section.product-detail .button-circle .text {
   visibility: hidden;
   transition: all 0.3s ease;
 }
-
+/* section.product-detail .button-circle:hover .text::after {
+  font-size: 8px !important;
+} */
 section.product-detail .button-circle .text::after {
   content: attr(data-text);
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  font-size: 10px;
+  font-size: 8px !important;
   line-height: 12px;
   font-family: var(--font-body);
 }
@@ -104,6 +106,7 @@ section.product-detail .button-circle.open .text::after {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  font-size: 10px !important;
 }
 
 section.product-detail .list-button {
