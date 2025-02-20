@@ -212,7 +212,7 @@ function animateZoomIn() {
       });
     });
   });
-  ScrollTrigger.refresh();
+  // ScrollTrigger.refresh();
 }
 
 function parallaxIt(e, target, movement) {
@@ -450,6 +450,11 @@ preloadImages("img").then(() => {
 
   init();
 });
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
+});
+history.scrollRestoration = "manual";
+
 $(window).on("beforeunload", function () {
   $(window).scrollTop(0);
 });
