@@ -153,16 +153,16 @@ function animateZoomIn() {
     gsap.fromTo(
       $(this).find(".wrapper-image .img"),
       {
-        scale: "1.5",
+        scale: "2",
         y: 100
       },
       {
         scrollTrigger: {
           trigger: this,
-          start: "top top",
+          start: "top bottom",
           end: "+=100%",
           scrub: 0.5,
-          pin: true,
+          // pin: true,
           // markers: true,
           onEnterBack: () => {
             $(this).removeClass("done");
@@ -190,7 +190,7 @@ function animateZoomIn() {
         },
         scale: "1",
         y: 0,
-        duration: 2,
+        duration: 1.5,
         ease: "none",
         stagger: 0.1,
         onComplete: () => {
