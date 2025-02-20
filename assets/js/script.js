@@ -147,14 +147,16 @@ function closeTabProductDetail(moreClassSection, dataTab) {
 }
 
 function animateZoomIn() {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   $(".animate-zoomin").each(function () {
+    let target = $(this);
+
     gsap.fromTo(
       $(this).find(".wrapper-image .img"),
       {
-        scale: "2",
-        y: 100
+        scale: "2"
+        // y: 100
       },
       {
         scrollTrigger: {
@@ -163,7 +165,7 @@ function animateZoomIn() {
           end: "+=100%",
           scrub: 0.5,
           // pin: true,
-          markers: true,
+          // markers: true,
           onEnterBack: () => {
             $(this).removeClass("done");
 
@@ -181,7 +183,7 @@ function animateZoomIn() {
             $(this).removeClass("done");
           },
           onUpdate: (self) => {
-            if (self.progress >= 0.8) {
+            if (self.progress > 0.99) {
               $(this).addClass("done");
             } else {
               $(this).removeClass("done");
@@ -189,7 +191,7 @@ function animateZoomIn() {
           }
         },
         scale: "1",
-        y: 0,
+        // y: 0,
         duration: 1.5,
         ease: "none",
         stagger: 0.1,
@@ -198,6 +200,17 @@ function animateZoomIn() {
         }
       }
     );
+
+    target.on("click", function () {
+      gsap.to(window, {
+        scrollTo: {
+          y: target.offset().top - (window.innerHeight - target.outerHeight()),
+          autoKill: false
+        },
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
   });
   ScrollTrigger.refresh();
 }
