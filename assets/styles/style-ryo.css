@@ -14,7 +14,7 @@ section.product-detail img {
   width: auto;
   height: 730px;
   object-fit: contain;
-  /* transition-duration: 0.7s; */
+  transition-duration: 0.7s;
 }
 
 section.product-detail .img {
