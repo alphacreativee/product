@@ -207,7 +207,7 @@ section.product-detail .wrapper-content .tab img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 section.product-detail .wrapper-content .tab .desc {
@@ -245,8 +245,8 @@ section.product-detail.product-2 .content.active.tab2 .img img {
 }
 
 section.product-detail .content.active.tab1 .button-circle[data-tab="tab1"] {
-  left: 60%;
-  top: 55%;
+  left: 55%;
+  top: 48%;
 }
 
 section.product-detail .content.active.tab2 .img img {
@@ -364,7 +364,7 @@ section.product-detail .content.active.tab3 .img img {
 
 section.product-variant {
   height: 100vh;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 section.product-variant .content {
@@ -399,7 +399,7 @@ section.product-variant .content-bottom .title {
 
 section.product-variant .content-top__image {
   width: 100%;
-  aspect-ratio: 438 / 480;
+  aspect-ratio: 474 / 486;
   position: relative;
   z-index: 2;
   margin-top: 40px;
