@@ -159,11 +159,11 @@ function animateZoomIn() {
       {
         scrollTrigger: {
           trigger: this,
-          start: "top bottom",
+          start: "top 120%",
           end: "+=100%",
           scrub: 0.5,
           // pin: true,
-          // markers: true,
+          markers: true,
           onEnterBack: () => {
             $(this).removeClass("done");
 
