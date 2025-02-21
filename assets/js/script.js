@@ -459,8 +459,9 @@ function changeVariantProduct() {
       scrollTrigger: {
         trigger: ".product-variant",
         start: "top top", // Bắt đầu thay đổi opacity khi pin bắt đầu
-        end: "bottom top", // Hoàn thành opacity = 1 khi cuộn đến cuối vùng pin
-        scrub: true
+        end: "20% top", // Hoàn thành opacity = 1 khi cuộn đến cuối vùng pin
+        scrub: true,
+        markers: true
       }
     }
   );
@@ -474,7 +475,7 @@ function changeVariantProduct() {
       scrollTrigger: {
         trigger: ".product-variant",
         start: "top top", // Bắt đầu giảm opacity khi pin bắt đầu
-        end: "bottom top", // Hoàn thành opacity = 0 khi cuộn đến cuối vùng pin
+        end: "20% top", // Hoàn thành opacity = 0 khi cuộn đến cuối vùng pin
         scrub: true
       }
     }
