@@ -457,12 +457,38 @@ section.product-variant .content-top__image .swiper-img-wrapper {
 
 section.product-variant .swiper-button-next {
   right: -80px;
-  color: #fff;
+  width: 21px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+}
+
+section.product-variant .swiper-button-next svg,
+section.product-variant .swiper-button-prev svg {
+  width: 5px;
+  height: 8px;
+}
+
+section.product-variant .swiper-button-next svg path,
+section.product-variant .swiper-button-prev svg path {
+  fill: black;
 }
 
 section.product-variant .swiper-button-prev {
   left: -80px;
-  color: #fff;
+  width: 21px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+}
+
+section.product-variant .swiper-button-next::after,
+section.product-variant .swiper-button-prev::after {
+  display: none;
 }
 
 section.product-variant .content-top__image .swiper .swiper-wrapper {
