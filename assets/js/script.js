@@ -413,7 +413,13 @@ function changeVariantProduct() {
     $("section.product-variant .content-top__sku span").text(dataRef);
     $("section.product-variant .content-top__image img").removeClass("active");
     $(
+      "section.product-variant .content-top__image .swiper-img-wrapper"
+    ).removeClass("active");
+    $(
       `section.product-variant .content-top__image img[data-variant='${dataVariant}']`
+    ).addClass("active");
+    $(
+      `section.product-variant .content-top__image .swiper-img-wrapper[data-variant='${dataVariant}']`
     ).addClass("active");
   });
 
@@ -477,6 +483,56 @@ function changeVariantProduct() {
       }
     }
   );
+
+  $(".content-top__image .swiper").mouseenter(function (e) {
+    let thisContentImage = $(this).closest(".content-top__image");
+    thisContentImage.addClass("active");
+
+    $(this).mousemove(function (e) {
+      // Get the position of the .content-top__image element
+      var imageOffset = $(this).offset();
+      var imageWidth = $(this).outerWidth();
+      var imageHeight = $(this).outerHeight();
+
+      // Calculate the new position of .cursor-pointer relative to the image
+      var cursorX = e.pageX - imageOffset.left;
+      var cursorY = e.pageY - imageOffset.top;
+
+      // Ensure the cursor stays inside the boundaries of the image
+      cursorX = Math.max(
+        0,
+        Math.min(cursorX, imageWidth - $(".cursor-pointer").outerWidth())
+      );
+      cursorY = Math.max(
+        0,
+        Math.min(cursorY, imageHeight - $(".cursor-pointer").outerHeight())
+      );
+
+      // Set the cursor position within the image
+      $(".cursor-pointer").css({ left: cursorX, top: cursorY });
+    });
+  });
+
+  $(".content-top__image .swiper").mouseleave(function (e) {
+    let thisContentImage = $(this).closest(".content-top__image");
+    thisContentImage.removeClass("active");
+    // $(this).removeClass("active");
+  });
+
+  document.querySelectorAll(".swiper-img-wrapper").forEach(function (wrapper) {
+    const swiper = new Swiper(wrapper.querySelector(".swiper"), {
+      loop: true,
+      slidesPerView: 1,
+      slidesPerPage: 1,
+      allowTouchMove: false,
+      speed: 500,
+      autoplay: false,
+      navigation: {
+        nextEl: wrapper.querySelector(".swiper-button-next"), // Scoped to the wrapper
+        prevEl: wrapper.querySelector(".swiper-button-prev") // Scoped to the wrapper
+      }
+    });
+  });
 }
 
 const init = () => {
