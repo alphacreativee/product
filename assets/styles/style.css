@@ -35,7 +35,7 @@ body {
 /* section hero */
 .hero {
   background-color: var(--bg-body);
-  height: 400vh;
+  height: 250vh;
 }
 .hero__img {
   width: 100%;
