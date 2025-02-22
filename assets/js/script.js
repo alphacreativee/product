@@ -83,6 +83,13 @@ function productDetail() {
     TweenMax.to(".button-circle .text::before", 0.3, { scale: 0.4 });
   });
 
+  $("section.product-detail .wrapper-content .tab-close").on(
+    "click",
+    function () {
+      $(".list-button .button-circle.open").trigger("click");
+    }
+  );
+
   $(".list-button .button-circle").on("click", function (e) {
     let thisButton = $(e.currentTarget);
     let dataTab = thisButton.data("tab");

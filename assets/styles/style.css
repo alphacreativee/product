@@ -21,6 +21,9 @@ body {
   left: 0;
   width: 100%;
   z-index: 99;
+  width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .header__container {
   padding: 28px 0;
