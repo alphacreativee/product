@@ -520,41 +520,49 @@ function changeVariantProduct() {
       start: "top top", // Khi phần tử chạm vào header
       end: "+=150%", // Giữ pin đến khi cuộn 150% chiều cao section
       scrub: true,
-      pin: true // Giữ cố định
-      // markers: true // Debug, có thể xóa sau khi kiểm tra
+      pin: true, // Giữ cố định
+      // markers: true, // Debug, có thể xóa sau khi kiểm tra
+      onUpdate: (self) => {
+        if (self.progress > 0.5) {
+          $(".product-variant").addClass("done");
+        } else {
+          $(".product-variant").removeClass("done");
+        }
+      }
     }
   });
 
   // Hiệu ứng opacity của .product-sku và .product-variant-content
-  gsap.fromTo(
-    ".product-sku",
-    { autoAlpha: 0 },
-    {
-      autoAlpha: 1,
-      ease: "none", // Chuyển động đều đặn, không tăng giảm tốc
-      scrollTrigger: {
-        trigger: ".product-variant",
-        start: "top top", // Bắt đầu thay đổi opacity khi pin bắt đầu
-        end: "20% top", // Hoàn thành opacity = 1 khi cuộn đến cuối vùng pin
-        scrub: true
-      }
-    }
-  );
+  // gsap.fromTo(
+  //   ".product-sku",
+  //   { autoAlpha: 0 },
+  //   {
+  //     autoAlpha: 1,
+  //     ease: "none", // Chuyển động đều đặn, không tăng giảm tốc
+  //     scrollTrigger: {
+  //       trigger: ".product-variant",
+  //       start: "top top", // Bắt đầu thay đổi opacity khi pin bắt đầu
+  //       end: "30% top", // Hoàn thành opacity = 1 khi cuộn đến cuối vùng pin
+  //       scrub: true,
+  //       markers: true
+  //     }
+  //   }
+  // );
 
-  gsap.fromTo(
-    ".product-variant-content",
-    { autoAlpha: 1 },
-    {
-      autoAlpha: 0,
-      ease: "none", // Chuyển động đều đặn, không tăng giảm tốc
-      scrollTrigger: {
-        trigger: ".product-variant",
-        start: "top top", // Bắt đầu giảm opacity khi pin bắt đầu
-        end: "20% top", // Hoàn thành opacity = 0 khi cuộn đến cuối vùng pin
-        scrub: true
-      }
-    }
-  );
+  // gsap.fromTo(
+  //   ".product-variant-content",
+  //   { autoAlpha: 1 },
+  //   {
+  //     autoAlpha: 0,
+  //     ease: "none", // Chuyển động đều đặn, không tăng giảm tốc
+  //     scrollTrigger: {
+  //       trigger: ".product-variant",
+  //       start: "top top", // Bắt đầu giảm opacity khi pin bắt đầu
+  //       end: "30% top", // Hoàn thành opacity = 0 khi cuộn đến cuối vùng pin
+  //       scrub: true
+  //     }
+  //   }
+  // );
 
   $(".content-top__image .swiper").mouseenter(function (e) {
     let thisContentImage = $(this).closest(".content-top__image");

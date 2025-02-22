@@ -135,7 +135,20 @@ section.product-variant {
   z-index: 4;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
+}
+.product-variant .product-variant-content {
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+}
+.product-variant.done .product-variant-content {
+  opacity: 0;
+  visibility: hidden;
+}
+.product-variant.done .product-sku {
+  opacity: 1;
+  visibility: visible;
 }
 .product-sku__container {
   position: relative;
