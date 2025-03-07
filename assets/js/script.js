@@ -617,7 +617,7 @@ function changeVariantProduct() {
 }
 
 function stickyMenu() {
-  gsap.registerPlugin(ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   window.addEventListener("DOMContentLoaded", () => {
     const links = gsap.utils.toArray(".sticky-menu__container ul li a");
@@ -675,6 +675,68 @@ function stickyMenu() {
       });
     });
   });
+  // hiệu ứng
+
+  // Thiết lập trạng thái ban đầu
+  gsap.set(".sticky-menu__container ul li:nth-child(-n+3)", {
+    autoAlpha: 1, // <li> 1, 2, 3 hiện
+    width: "auto",
+  });
+
+  gsap.set(".sticky-menu__container ul li:nth-child(4)", {
+    autoAlpha: 0, // <li> 4 ẩn
+    width: "0",
+    padding: "0",
+  });
+
+  // Tạo timeline cho hiệu ứng
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".product-variant",
+      start: "top 20%", // Khi đỉnh section product-variant cách top viewport 20%
+      end: "bottom top", // Kết thúc khi đáy section chạm top viewport
+      toggleActions: "play none none reverse", // Chạy timeline khi vào, đảo ngược khi ra
+      // markers: true // Uncomment để debug với markers
+    },
+  });
+
+  // Thêm các hiệu ứng vào timeline
+  tl
+    // Scale sticky-menu__container về 0
+    .to(".sticky-menu__container", {
+      scale: 0,
+      duration: 0.3,
+      ease: "power2.in",
+    })
+    // Ẩn li 1, 2, 3 và hiện li 4 (đồng thời)
+    .to(
+      ".sticky-menu__container ul li:nth-child(-n+3)",
+      {
+        autoAlpha: 0,
+        width: "0",
+        padding: "0",
+        duration: 0.5,
+        ease: "power2.inOut",
+      },
+      "<" // Chạy đồng thời với bước scale về 0
+    )
+    .to(
+      ".sticky-menu__container ul li:nth-child(4)",
+      {
+        autoAlpha: 1,
+        width: "auto",
+        padding: "initial",
+        duration: 0.5,
+        ease: "power2.inOut",
+      },
+      "<" // Chạy đồng thời với bước trên
+    )
+    // Scale sticky-menu__container về 1
+    .to(".sticky-menu__container", {
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.out",
+    });
 }
 stickyMenu();
 const init = () => {

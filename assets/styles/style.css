@@ -26,6 +26,8 @@ body {
   z-index: 99;
   background-color: #fff;
   margin: 0 auto;
+  transition: width 0.4s ease-in-out;
+  transform-style: preserve-3d;
 }
 .sticky-menu__container ul {
   list-style-type: none;
@@ -67,6 +69,10 @@ body {
   margin-left: 14px;
   transition: all 0.3s ease;
   border: 1px solid #111;
+  white-space: nowrap;
+}
+.sticky-menu__container ul li a.book {
+  margin-left: 0;
 }
 .sticky-menu__container ul li a.btn-buy::before {
   content: unset;
@@ -78,6 +84,7 @@ body {
 }
 .sticky-menu__container ul li a.active::before {
   transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .sticky-menu__container ul li a::before {
   content: "";
