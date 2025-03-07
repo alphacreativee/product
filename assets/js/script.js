@@ -735,6 +735,7 @@ function stickyMenu() {
     .to(".sticky-menu__container", {
       scale: 1,
       duration: 0.3,
+      transformOrigin: "center",
       ease: "power2.out",
     });
 }
