@@ -215,6 +215,7 @@ body {
 section.product-variant {
   position: relative;
   width: 100%;
+  will-change: transform;
 }
 .product-sku {
   position: absolute;

@@ -519,8 +519,9 @@ function changeVariantProduct() {
       trigger: ".product-variant",
       start: "top top", // Khi phần tử chạm vào header
       end: "+=150%", // Giữ pin đến khi cuộn 150% chiều cao section
-      scrub: true,
+      scrub: 1,
       pin: true, // Giữ cố định
+      // pinSpacing: false,
       // markers: true, // Debug, có thể xóa sau khi kiểm tra
       onUpdate: (self) => {
         if (self.progress > 0.5) {
@@ -660,7 +661,7 @@ function stickyMenu() {
         trigger: section,
         start: "top 50%",
         end: "bottom 50%",
-        markers: true,
+        // markers: true,
         onEnter: () => {
           links.forEach((item) => item.classList.remove("active"));
           link.classList.add("active");
