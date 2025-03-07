@@ -35,6 +35,25 @@
     <!-- end link custom css page -->
   </head>
   <body>
+    <div class="sticky-menu">
+      <div class="sticky-menu__container">
+        <ul>
+          <li>
+            <a href="#description" >Description</a>
+          </li>
+          <li>
+            <a href="#discover">Discover</a>
+          </li>
+          <li>
+            <a href="">Information</a>
+          </li>
+          <li>
+            <a href="" class="btn-buy">buy now</a>
+          </li>
+        </ul>
+      </div>
+     
+    </div>
     <header class="header">
       <div class="container-fluid p-0">
         <div
@@ -48,6 +67,7 @@
     </header>
     <main>
       <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="container-fluid p-0">
           <div class="hero__img">
             <img src="./assets/images/png/hero.png" alt="Hero Image" />
@@ -202,7 +222,7 @@
         </div>
       </section>
 
-      <section class="details">
+      <section class="details" id="description">
         <div class="container-fluid p-0">
           <div class="row g-0">
             <div class="offset-lg-3 col-lg-6">
@@ -228,7 +248,7 @@
         </div>
       </section>
 
-      <section class="product-detail product-1 animate-zoomin">
+      <section class="product-detail product-1 animate-zoomin" id="discover">
         <div class="container-fluid p-0">
           <div class="content">
             <div class="wrapper-image">
@@ -603,6 +623,7 @@
     <script src="./assets/libs/gsap.min.js"></script>
     <script src="./assets/libs/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
     <script src="./assets/libs/splitType.min.js"></script>
     <script src="./assets/libs/swiper-bundle.min.js"></script>
     <!-- end import gsap -->
