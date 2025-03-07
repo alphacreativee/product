@@ -28,6 +28,15 @@ body {
   margin: 0 auto;
   transition: width 0.4s ease-in-out;
   transform-style: preserve-3d;
+  animation: sticky-menu 1s ease forwards;
+}
+@keyframes sticky-menu {
+  from {
+    bottom: -40px;
+  }
+  to {
+    bottom: 40px;
+  }
 }
 .sticky-menu__container ul {
   list-style-type: none;
