@@ -740,13 +740,32 @@ function stickyMenu() {
     });
 }
 stickyMenu();
+function swiperDiscover() {
+  const swiperDiscoverContainers = document.querySelectorAll(
+    ".swiper-discover-img"
+  );
+  if (!swiperDiscoverContainers.length) return;
+
+  swiperDiscoverContainers.forEach((container) => {
+    new Swiper(container, {
+      slidesPerView: 1,
+      pagination: {
+        el: container.querySelector(".swiper-pagination"),
+      },
+      navigation: {
+        nextEl: container.querySelector(".swiper-button-next"),
+        prevEl: container.querySelector(".swiper-button-prev"),
+      },
+    });
+  });
+}
 const init = () => {
   intro();
   productDetail();
   hero();
   animationText();
   text();
-
+  swiperDiscover();
   animateZoomIn();
   changeVariantProduct();
   document
