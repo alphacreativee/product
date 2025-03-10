@@ -840,6 +840,14 @@ section.product-variant .content-top__image img.active {
   white-space: nowrap;
   margin: 0;
 }
+.button-info .button-circle svg {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+}
+.button-info .button-circle::after {
+  color: transparent;
+}
 section.product-variant .content-top__sku {
   color: #cccccb;
   font-family: var(--font-body);
@@ -868,12 +876,13 @@ section.product-variant .content-pagination {
   align-items: center;
   gap: 12px;
   position: absolute;
-  bottom: 0;
+  bottom: -32px;
   left: 50%;
   transform: translateX(-50%);
   list-style: none;
   padding-left: 0;
   z-index: 99;
+  margin-bottom: 0;
 }
 
 section.product-variant .content-pagination li {
