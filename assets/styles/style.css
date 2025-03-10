@@ -274,6 +274,7 @@ section.product-variant {
 .product-variant.done .product-sku__img {
   opacity: 1;
   visibility: visible;
+  transform: translateY(80px);
 }
 .product-sku__container {
   position: relative;
@@ -305,9 +306,9 @@ section.product-variant {
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s;
+  transition: opacity 0.8s ease, transform 0.7s ease;
   transition-delay: 0.6s;
-  transform: translateY(80px);
+  transform: translateY(120px);
 }
 .product-sku__img img {
   width: auto;
@@ -341,7 +342,7 @@ section.product-variant {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .button-info .button-circle:hover .text {
   opacity: 1;
