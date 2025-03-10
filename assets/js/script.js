@@ -99,9 +99,12 @@ function productDetail() {
   // start open popup
   $(".button-info").on("click", function (e) {
     $(".content-discover").addClass("show-popup");
+    $("body").addClass("overflow-hidden");
   });
+
   $(".content-discover__close").on("click", function (e) {
     $(".content-discover").removeClass("show-popup");
+    $("body").removeClass("overflow-hidden");
   });
   // end open popup
   $("section.product-detail .wrapper-content .tab-close").on(

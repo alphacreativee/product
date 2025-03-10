@@ -627,17 +627,20 @@ section.product-variant .content-top__image img.active {
   object-fit: cover;
 }
 .content-discover__close {
-  position: absolute;
+  /* position: absolute;
   right: 58px;
-  top: 34px;
+  top: 34px; */
   /* background-color: red; */
-  padding: 20px;
+  /* padding: 20px; */
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
 }
 .content-discover__close:hover {
   cursor: pointer;
 }
 .content-discover__content {
-  padding: 110px 64px;
+  padding: 55px 64px 110px;
   background-color: #fff;
   height: 100vh;
   overflow-y: scroll;
@@ -794,6 +797,7 @@ section.product-variant .content-top__image img.active {
   line-height: 1;
   font-family: var(--font-heading);
   color: #111;
+  pointer-events: none;
 }
 .content-discover__content h4 {
   font-family: var(--font-body);
