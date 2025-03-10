@@ -798,7 +798,7 @@ section.product-variant .content-top__image img.active {
   width: 100%;
   height: 36px;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 12px;
   text-transform: uppercase;
   background-color: #111;
   text-decoration: none;
@@ -807,8 +807,8 @@ section.product-variant .content-top__image img.active {
   border: 1px solid #111;
 }
 .content-discover__content .button-group a:hover {
-  color: #111;
-  background-color: #fff;
+  /* color: #111; */
+  /* background-color: #fff; */
 }
 .content-discover__title {
   display: flex;
@@ -886,13 +886,14 @@ section.product-variant .content-pagination {
 }
 
 section.product-variant .content-pagination li {
-  width: 13px;
-  height: 13px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background-color: var(--color-main);
   position: relative;
   cursor: pointer;
-  min-width: 13px;
+  min-width: 16px;
+  border: 1px solid #fff;
 }
 
 section.product-variant .content-pagination li::before {
