@@ -82,7 +82,28 @@ function productDetail() {
     TweenMax.to(this, 0.3, { scale: 1.4 });
     // TweenMax.to(".button-circle .text::before", 0.3, { scale: 0.4 });
   });
+  //
+  $(".button-info").mousemove(function (e) {
+    callParallax(e);
+  });
 
+  $(".button-info").mouseleave(function (e) {
+    TweenMax.to(this, 0.3, { height: 0, width: 40 });
+    TweenMax.to(".button-circle", 0.3, { scale: 1, x: 0, y: 0 });
+  });
+
+  $(".button-info .button-circle").mouseenter(function (e) {
+    TweenMax.to(this, 0.3, { scale: 1.4 });
+    // TweenMax.to(".button-circle .text::before", 0.3, { scale: 0.4 });
+  });
+  // start open popup
+  $(".button-info").on("click", function (e) {
+    $(".content-discover").addClass("show-popup");
+  });
+  $(".content-discover__close").on("click", function (e) {
+    $(".content-discover").removeClass("show-popup");
+  });
+  // end open popup
   $("section.product-detail .wrapper-content .tab-close").on(
     "click",
     function () {

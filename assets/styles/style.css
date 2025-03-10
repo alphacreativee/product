@@ -270,6 +270,25 @@ section.product-variant {
   width: auto;
   height: 100%;
 }
+.button-info {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+.button-info .button-circle {
+  opacity: 1;
+  visibility: visible;
+}
+.button-info .button-circle .text {
+  content: attr(--data-text);
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  font-size: 10px;
+}
 @media (max-width: 1600px) {
   .product-sku__img,
   .product-sku__container {

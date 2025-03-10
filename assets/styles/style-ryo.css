@@ -555,6 +555,12 @@ section.product-variant .content-top__image img.active {
   height: 100%;
   background-color: #f5f5f5;
   z-index: 199;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: clip-path 0.7s;
+  display: block;
+}
+.content-discover.show-popup {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
 .content-discover__wrapper {
   height: 100%;
@@ -622,9 +628,10 @@ section.product-variant .content-top__image img.active {
 }
 .content-discover__close {
   position: absolute;
-  right: 64px;
-  top: 54px;
-  transform: translateX(-100%);
+  right: 58px;
+  top: 34px;
+  /* background-color: red; */
+  padding: 20px;
 }
 .content-discover__close:hover {
   cursor: pointer;
