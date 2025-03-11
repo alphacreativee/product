@@ -27,9 +27,13 @@ body {
   z-index: 99;
   background-color: #fff;
   margin: 0 auto;
-  transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out, opacity 0.3s ease;
   transform-style: preserve-3d;
   animation: sticky-menu 1s ease forwards;
+}
+.sticky-menu.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 @keyframes sticky-menu {
   from {
@@ -225,7 +229,7 @@ body {
   position: absolute;
   top: 50px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 50px);
   width: 100%;
   text-align: center;
   /* white-space: nowrap; */
@@ -240,9 +244,9 @@ section.product-variant {
 }
 .product-sku {
   position: absolute;
-  top: 50%;
+  top: 120px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   z-index: 4;
   opacity: 0;
   visibility: hidden;
@@ -268,6 +272,7 @@ section.product-variant {
 }
 .product-variant.done .product-sku__name {
   opacity: 1;
+  transform: translate(-50%, 0);
   /* visibility: visible; */
   transition-duration: 0.6s;
   transition-delay: 0.7s;

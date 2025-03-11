@@ -108,11 +108,14 @@ function productDetail() {
 
     let thisSection = thisButton.closest("section.product-detail");
     let moreClassSection = ".product-1";
+
     if (thisSection.hasClass("product-2")) {
       moreClassSection = ".product-2";
     }
+
     thisSection.toggleClass("open");
     $("body").toggleClass("overflow-hidden");
+    $(".sticky-menu").toggleClass("hide");
 
     if (thisButton.hasClass("open")) {
       closeTabProductDetail(moreClassSection, dataTab);
@@ -129,6 +132,7 @@ function productDetail() {
       ).addClass("active");
 
       $("body").addClass("overflow-hidden");
+      $(".sticky-menu").addClass("hide");
 
       let viewWidth = $(window).width() / 2;
       if (viewWidth > 600) {
@@ -194,6 +198,7 @@ function closeTabProductDetail(moreClassSection, dataTab) {
     .removeClass("open");
 
   $("body").removeClass("overflow-hidden");
+  $(".sticky-menu").removeClass("hide");
 
   let viewWidth = $(window).width() / 2;
   if (viewWidth > 600) {
