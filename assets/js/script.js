@@ -39,7 +39,7 @@ function intro() {
       });
     })
   ).then(() => {
-    console.log("All images loaded");
+    // console.log("All images loaded");
     gsap.to(ball, {
       frame: images.length - 1,
       snap: "frame",
@@ -124,6 +124,7 @@ function productDetail() {
       moreClassSection = ".product-2";
     }
     thisSection.toggleClass("open");
+    $("body").toggleClass("overflow-hidden");
 
     if (thisButton.hasClass("open")) {
       closeTabProductDetail(moreClassSection, dataTab);
@@ -138,6 +139,8 @@ function productDetail() {
       $(
         `section.product-detail${moreClassSection} [detail-${dataTab}]`
       ).addClass("active");
+
+      $("body").addClass("overflow-hidden");
 
       let viewWidth = $(window).width() / 2;
       if (viewWidth > 600) {
@@ -202,6 +205,8 @@ function closeTabProductDetail(moreClassSection, dataTab) {
     .removeClass("d-none")
     .removeClass("open");
 
+  $("body").removeClass("overflow-hidden");
+
   let viewWidth = $(window).width() / 2;
   if (viewWidth > 600) {
     viewWidth = 600;
@@ -232,7 +237,7 @@ function closeTabProductDetail(moreClassSection, dataTab) {
       ease: "none",
       onUpdate: function () {
         if (this.progress() > 0.2) {
-          console.log("Progress exceeded 0.8!");
+          // console.log("Progress exceeded 0.8!");
 
           gsap.fromTo(
             `section.product-detail${moreClassSection} .wrapper-content`,
