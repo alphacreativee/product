@@ -673,23 +673,26 @@ function stickyMenu() {
 
   window.addEventListener("DOMContentLoaded", () => {
     const links = gsap.utils.toArray(".sticky-menu__container ul li a");
-    console.log(links);
 
     if (!links.length) return;
 
     // Xử lý sự kiện click
     links.forEach((button) => {
       button.addEventListener("click", (e) => {
-        e.preventDefault();
-        links.forEach((item) => item.classList.remove("active"));
-        button.classList.add("active");
         const id = button.getAttribute("href");
-        console.log("Scrolling to:", id);
 
-        if (!id || id === "" || !document.querySelector(id)) {
-          console.error("Không tìm thấy phần tử với ID:", id);
+        if (!id || !id.startsWith("#") || !document.querySelector(id)) {
+          console.warn(
+            "Liên kết không hợp lệ hoặc không tìm thấy phần tử:",
+            id
+          );
           return;
         }
+
+        e.preventDefault();
+
+        links.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
 
         gsap.to(window, {
           duration: 0.5,
