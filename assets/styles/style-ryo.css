@@ -439,6 +439,7 @@ section.product-variant .content-top__image {
   position: relative;
   z-index: 2;
   margin-top: 40px;
+  cursor: none;
 }
 
 section.product-variant .content-top__image .cursor-pointer {
@@ -992,6 +993,39 @@ section.product-variant .content-pagination li.active::after {
 
 .button-custom:hover span {
   --m: calc(var(--font-size) * -1);
+}
+
+.cursor {
+  width: 37px;
+  height: 37px;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  background-image: url("data:image/svg+xml,%3Csvg width='37' height='37' viewBox='0 0 37 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.24278 31.6983C13.2722 38.7277 24.6692 38.7277 31.6986 31.6983C38.7281 24.6689 38.7281 13.2719 31.6986 6.24245C24.6692 -0.78699 13.2722 -0.786989 6.24278 6.24245C-0.786656 13.2719 -0.786657 24.6689 6.24278 31.6983ZM25.542 19.4704L19.4708 19.4704L19.4708 25.5417L18.4709 25.5417L18.4709 19.4704L12.3997 19.4704L12.3997 18.4706L18.4709 18.4706L18.4709 12.3994H19.4708L19.4708 18.4706L25.542 18.4706L25.542 19.4704Z' fill='white'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /* mix-blend-mode: difference; Hiệu ứng nổi bật */
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s linear;
+}
+
+.cursor::after {
+  content: attr(data-text);
+  width: 150px;
+  height: 15px;
+  color: white;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+  font-family: var(--font-body);
 }
 
 @media (max-width: 1600px) {

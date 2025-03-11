@@ -83,21 +83,9 @@ function productDetail() {
     // TweenMax.to(".button-circle .text::before", 0.3, { scale: 0.4 });
   });
   //
-  $(".button-info").mousemove(function (e) {
-    callParallax(e);
-  });
 
-  $(".button-info").mouseleave(function (e) {
-    TweenMax.to(this, 0.3, { height: 0, width: 40 });
-    TweenMax.to(".button-circle", 0.3, { scale: 1, x: 0, y: 0 });
-  });
-
-  $(".button-info .button-circle").mouseenter(function (e) {
-    TweenMax.to(this, 0.3, { scale: 1.4 });
-    // TweenMax.to(".button-circle .text::before", 0.3, { scale: 0.4 });
-  });
   // start open popup
-  $(".button-info").on("click", function (e) {
+  $(".product-variant .content-top__image").on("click", function (e) {
     $(".content-discover").addClass("show-popup");
     $("body").addClass("overflow-hidden");
   });
@@ -626,29 +614,29 @@ function changeVariantProduct() {
     let thisContentImage = $(this).closest(".content-top__image");
     thisContentImage.addClass("active");
 
-    $(this).mousemove(function (e) {
-      // Get the position of the .content-top__image element
-      var imageOffset = $(this).offset();
-      var imageWidth = $(this).outerWidth();
-      var imageHeight = $(this).outerHeight();
+    // $(this).mousemove(function (e) {
+    //   // Get the position of the .content-top__image element
+    //   var imageOffset = $(this).offset();
+    //   var imageWidth = $(this).outerWidth();
+    //   var imageHeight = $(this).outerHeight();
 
-      // Calculate the new position of .cursor-pointer relative to the image
-      var cursorX = e.pageX - imageOffset.left;
-      var cursorY = e.pageY - imageOffset.top;
+    //   // Calculate the new position of .cursor-pointer relative to the image
+    //   var cursorX = e.pageX - imageOffset.left;
+    //   var cursorY = e.pageY - imageOffset.top;
 
-      // Ensure the cursor stays inside the boundaries of the image
-      cursorX = Math.max(
-        0,
-        Math.min(cursorX, imageWidth - $(".cursor-pointer").outerWidth())
-      );
-      cursorY = Math.max(
-        0,
-        Math.min(cursorY, imageHeight - $(".cursor-pointer").outerHeight())
-      );
+    //   // Ensure the cursor stays inside the boundaries of the image
+    //   cursorX = Math.max(
+    //     0,
+    //     Math.min(cursorX, imageWidth - $(".cursor-pointer").outerWidth())
+    //   );
+    //   cursorY = Math.max(
+    //     0,
+    //     Math.min(cursorY, imageHeight - $(".cursor-pointer").outerHeight())
+    //   );
 
-      // Set the cursor position within the image
-      $(".cursor-pointer").css({ left: cursorX, top: cursorY });
-    });
+    //   // Set the cursor position within the image
+    //   $(".cursor-pointer").css({ left: cursorX, top: cursorY });
+    // });
   });
 
   $(".content-top__image .swiper").mouseleave(function (e) {
@@ -827,6 +815,38 @@ function swiperDiscover() {
     });
   });
 }
+
+function customCursor() {
+  const cursor = document.querySelector(".cursor");
+  const target = document.querySelector(".content-top__image");
+
+  if (!cursor || !target) return;
+
+  gsap.set(cursor, { xPercent: -50, yPercent: -50, opacity: 0 });
+
+  let active = false;
+
+  target.addEventListener("mouseenter", () => {
+    active = true;
+    gsap.to(cursor, { opacity: 1, duration: 0.3, ease: "power2.out" });
+  });
+
+  target.addEventListener("mouseleave", () => {
+    active = false;
+    gsap.to(cursor, { opacity: 0, duration: 0.3, ease: "power2.out" });
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!active) return;
+    gsap.to(cursor, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.2,
+      ease: "power2.out"
+    });
+  });
+}
+
 const init = () => {
   intro();
   productDetail();
@@ -836,6 +856,7 @@ const init = () => {
   swiperDiscover();
   animateZoomIn();
   changeVariantProduct();
+  customCursor();
   document
     .querySelectorAll(".button-custom")
     .forEach(
