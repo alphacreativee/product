@@ -187,6 +187,9 @@ function productDetail() {
     $(
       `section.product-variant .content-pagination li[data-variant=${thisButtonColor}]`
     ).trigger("click");
+
+    // update title color
+    $(".content-discover .color .title").text(thisButtonColor);
   });
 }
 
