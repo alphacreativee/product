@@ -682,10 +682,10 @@ function stickyMenu() {
         const id = button.getAttribute("href");
 
         if (!id || !id.startsWith("#") || !document.querySelector(id)) {
-          console.warn(
-            "Liên kết không hợp lệ hoặc không tìm thấy phần tử:",
-            id
-          );
+          // console.warn(
+          //   "Liên kết không hợp lệ hoặc không tìm thấy phần tử:",
+          //   id
+          // );
           return;
         }
 
@@ -706,8 +706,8 @@ function stickyMenu() {
     links.forEach((link) => {
       const id = link.getAttribute("href");
 
-      if (!id || id === "" || !document.querySelector(id)) {
-        console.warn("ID không hợp lệ hoặc không tìm thấy phần tử:", id);
+      if (!id || !id.startsWith("#") || !document.querySelector(id)) {
+        // console.warn("Liên kết không hợp lệ hoặc không tìm thấy phần tử:", id);
         return;
       }
 
@@ -748,10 +748,18 @@ function stickyMenu() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".product-variant",
-      start: "top 20%", // Khi đỉnh section product-variant cách top viewport 20%
+      start: "top 100%", // Khi đỉnh section product-variant cách top viewport 20%
       end: "bottom top", // Kết thúc khi đáy section chạm top viewport
-      toggleActions: "play none none reverse" // Chạy timeline khi vào, đảo ngược khi ra
-      // markers: true // Uncomment để debug với markers
+      toggleActions: "play none none reverse", // Chạy timeline khi vào, đảo ngược khi ra
+      // markers: true, // Uncomment để debug với markers
+      onUpdate: (self) => {
+        const variant = document.querySelector(".product-variant");
+        if (variant.classList.contains("done")) {
+          tl.play();
+        } else {
+          tl.reverse();
+        }
+      }
     }
   });
 
