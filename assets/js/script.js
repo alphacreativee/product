@@ -481,23 +481,23 @@ function animationText() {
   document.querySelectorAll(".data-text-split").forEach((element) => {
     let text = new SplitType(element, { types: "chars" });
 
-    gsap.fromTo(
-      text.chars,
-      { clipPath: "inset(100% 0% 0% 0%)" },
-      {
-        clipPath: "inset(0% 0% 0% 0%)",
-        duration: 2,
-        // stagger: 0.05,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 50%",
-          end: "bottom 50%",
-          toggleActions: "play none none reverse",
-          markers: true,
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   text.chars,
+    //   { clipPath: "inset(100% 0% 0% 0%)" },
+    //   {
+    //     clipPath: "inset(0% 0% 0% 0%)",
+    //     duration: 2,
+    //     // stagger: 0.05,
+    //     ease: "power3.out",
+    //     scrollTrigger: {
+    //       trigger: element,
+    //       start: "top 50%",
+    //       end: "bottom 50%",
+    //       toggleActions: "play none none reverse",
+    //       markers: true,
+    //     },
+    //   }
+    // );
   });
 }
 function text() {
