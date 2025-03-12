@@ -277,6 +277,10 @@ section.product-variant {
   transition-duration: 0.6s;
   transition-delay: 0.7s;
 }
+.product-variant.done .product-sku__name .chars {
+  display: inline-block;
+  clip-path: inset(100% 0% 0% 0%);
+}
 .product-variant.done .product-sku__img {
   opacity: 1;
   visibility: visible;
