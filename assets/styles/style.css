@@ -386,3 +386,11 @@ section.product-variant {
   }
 }
 /* end section intro */
+@media (max-width: 767px) {
+  .hero__img {
+    padding: 64px 24px 0;
+  }
+  .header__container {
+    padding: 20px 0;
+  }
+}
