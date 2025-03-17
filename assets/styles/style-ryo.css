@@ -1037,3 +1037,34 @@ section.product-variant .content-pagination li.active::after {
     height: 650px;
   }
 }
+
+@media (max-width: 767px) {
+  main {
+    overflow: hidden;
+  }
+
+  .details p {
+    padding: 0 24px;
+  }
+
+  section.product-detail img {
+    height: 440px;
+  }
+
+  .product-sku__container {
+    height: 300px;
+  }
+
+  .product-sku__container {
+    width: calc(100vw - 48px);
+  }
+
+  .product-sku__name {
+    font-size: 80px;
+    line-height: 84px;
+  }
+
+  .product-sku__img {
+    height: 650px;
+  }
+}
