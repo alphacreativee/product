@@ -262,6 +262,8 @@ function closeTabProductDetail(moreClassSection, dataTab) {
 function animateZoomIn() {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+  const posMobile = $(window).width() < 767 ? "-100" : "-150";
+
   $(".animate-zoomin").each(function () {
     let target = $(this);
 
@@ -270,7 +272,7 @@ function animateZoomIn() {
       {
         scale: "2",
         transformOrigin: "top center",
-        y: -150
+        y: posMobile
       },
       {
         scrollTrigger: {
