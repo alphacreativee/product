@@ -1039,8 +1039,16 @@ section.product-variant .content-pagination li.active::after {
 }
 
 @media (max-width: 767px) {
+  .cursor {
+    display: none;
+  }
+
   main {
     overflow: hidden;
+  }
+
+  .details h1 {
+    padding: 0 24px;
   }
 
   .details p {
