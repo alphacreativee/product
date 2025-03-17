@@ -413,4 +413,7 @@ section.product-variant {
   .hero {
     height: 300lvh;
   }
+  .details {
+    background-color: var(--bg-body);
+  }
 }
