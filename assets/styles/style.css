@@ -410,4 +410,7 @@ section.product-variant {
   .details h1 {
     padding: 0 24px;
   }
+  .hero {
+    height: 300dvh;
+  }
 }
