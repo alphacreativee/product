@@ -388,7 +388,7 @@ section.product-variant {
 /* end section intro */
 @media (max-width: 767px) {
   .hero__img {
-    padding: 64px 24px 0;
+    padding: 64px 16px 0;
   }
   .header__container {
     padding: 20px 0;
@@ -408,7 +408,7 @@ section.product-variant {
     margin-left: 0;
   }
   .details h1 {
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   /* .details {
