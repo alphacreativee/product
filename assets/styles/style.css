@@ -410,4 +410,14 @@ section.product-variant {
   .details h1 {
     padding: 0 24px;
   }
+
+  /* .details {
+    background-color: var(--bg-body);
+  }
+  .intro {
+    background-color: var(--bg-body);
+  } */
+  .intro {
+    background-color: var(--bg-body);
+  }
 }
