@@ -410,10 +410,11 @@ section.product-variant {
   .details h1 {
     padding: 0 24px;
   }
-  .hero {
-    height: 290vh;
-  }
+
   .details {
+    background-color: var(--bg-body);
+  }
+  .intro {
     background-color: var(--bg-body);
   }
 }
