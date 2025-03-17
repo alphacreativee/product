@@ -417,4 +417,7 @@ section.product-variant {
   .intro {
     background-color: var(--bg-body);
   } */
+  .intro {
+    background-color: var(--bg-body);
+  }
 }
