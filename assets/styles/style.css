@@ -411,7 +411,7 @@ section.product-variant {
     padding: 0 24px;
   }
   .hero {
-    height: 300lvh;
+    height: 290vh;
   }
   .details {
     background-color: var(--bg-body);
