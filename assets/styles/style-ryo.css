@@ -1089,4 +1089,8 @@ section.product-variant .content-pagination li.active::after {
   .content-discover__content {
     padding: 55px 16px 110px;
   }
+
+  .button-custom div span {
+    transform: translateY(-11px) translateZ(0);
+  }
 }
