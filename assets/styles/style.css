@@ -394,9 +394,9 @@ section.product-variant {
     padding: 20px 0;
   }
   .sticky-menu__container ul li {
-    padding: 6px 12px;
+    padding: 6px;
   }
   .sticky-menu__container ul li a.btn-buy {
-    margin-left: 0;
+    margin-left: 6px;
   }
 }
