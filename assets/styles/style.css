@@ -411,6 +411,6 @@ section.product-variant {
     padding: 0 24px;
   }
   .hero {
-    height: 300dvh;
+    height: 300lvh;
   }
 }
