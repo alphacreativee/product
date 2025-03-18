@@ -48,10 +48,10 @@ function intro() {
         scrub: 1,
         pin: "canvas",
         end: "150%",
-        pinSpacing: false
+        pinSpacing: false,
         // markers: true,
       },
-      onUpdate: render
+      onUpdate: render,
     });
 
     render();
@@ -153,7 +153,7 @@ function productDetail() {
         .stop()
         .animate(
           {
-            width: viewWidth
+            width: viewWidth,
           },
           1000
         );
@@ -162,13 +162,13 @@ function productDetail() {
         `section.product-detail${moreClassSection} .wrapper-content`, // Selector
         {
           width: 0, // Giá trị ban đầu của width
-          x: "100%" // Giá trị ban đầu của transformY
+          x: "100%", // Giá trị ban đầu của transformY
         },
         {
           width: viewWidth, // Thu hẹp chiều rộng về 0
           x: 0, // Di chuyển phần tử xuống dưới (transformY 100%)
           duration: 1, // Thời gian thay đổi (1 giây)
-          ease: "none" // Hiệu ứng mượt mà
+          ease: "none", // Hiệu ứng mượt mà
         }
       );
     }
@@ -217,7 +217,7 @@ function closeTabProductDetail(moreClassSection, dataTab) {
   gsap.fromTo(
     `section.product-detail${moreClassSection} .wrapper-content .detail-${dataTab}`, // Selector
     {
-      y: 0
+      y: 0,
     },
     {
       y: "100%",
@@ -225,14 +225,14 @@ function closeTabProductDetail(moreClassSection, dataTab) {
       ease: "none",
       onComplete: function () {
         gsap.set(this.target, { transform: "none" });
-      }
+      },
     }
   );
 
   gsap.fromTo(
     `section.product-detail${moreClassSection} .wrapper-content`, // Selector
     {
-      x: 0
+      x: 0,
     },
     {
       x: "100%",
@@ -245,16 +245,16 @@ function closeTabProductDetail(moreClassSection, dataTab) {
           gsap.fromTo(
             `section.product-detail${moreClassSection} .wrapper-content`,
             {
-              width: viewWidth
+              width: viewWidth,
             },
             {
               width: 0,
               duration: 0.5,
-              ease: "none"
+              ease: "none",
             }
           );
         }
-      }
+      },
     }
   );
 }
@@ -272,7 +272,7 @@ function animateZoomIn() {
       {
         scale: "2",
         transformOrigin: "top center",
-        y: posMobile
+        y: posMobile,
       },
       {
         scrollTrigger: {
@@ -305,7 +305,7 @@ function animateZoomIn() {
             } else {
               $(this).removeClass("done");
             }
-          }
+          },
         },
         scale: "1",
         y: 0,
@@ -314,7 +314,7 @@ function animateZoomIn() {
         stagger: 0.1,
         onComplete: () => {
           $(this).addClass("done");
-        }
+        },
       }
     );
 
@@ -322,10 +322,10 @@ function animateZoomIn() {
       gsap.to(window, {
         scrollTo: {
           y: target.offset().top - (window.innerHeight - target.outerHeight()),
-          autoKill: false
+          autoKill: false,
         },
         duration: 1,
-        ease: "power2.out"
+        ease: "power2.out",
       });
     });
   });
@@ -337,7 +337,7 @@ function animateZoomIn() {
       {
         scale: "2",
         transformOrigin: "top center",
-        y: -150
+        y: -150,
       },
       {
         scrollTrigger: {
@@ -370,7 +370,7 @@ function animateZoomIn() {
             } else {
               $(this).removeClass("done");
             }
-          }
+          },
         },
         scale: "1",
         y: 0,
@@ -379,7 +379,7 @@ function animateZoomIn() {
         stagger: 0.1,
         onComplete: () => {
           $(this).addClass("done");
-        }
+        },
       }
     );
 
@@ -387,10 +387,10 @@ function animateZoomIn() {
       gsap.to(window, {
         scrollTo: {
           y: target.offset().top - (window.innerHeight - target.outerHeight()),
-          autoKill: false
+          autoKill: false,
         },
         duration: 1,
-        ease: "power2.out"
+        ease: "power2.out",
       });
     });
   });
@@ -409,7 +409,7 @@ function parallaxIt(e, target, movement) {
   TweenMax.to($this, 0.3, {
     x: parallaxX - movement / 2,
     y: parallaxY - movement / 2,
-    ease: Power2.easeOut
+    ease: Power2.easeOut,
   });
 }
 
@@ -440,15 +440,15 @@ function hero() {
         end: "+=100%",
         scrub: true,
         // markers: true,
-        pin: true
-      }
+        pin: true,
+      },
     }
   );
 
   gsap.fromTo(
     ".intro",
     {
-      autoAlpha: 0
+      autoAlpha: 0,
     },
     {
       autoAlpha: 1,
@@ -456,8 +456,8 @@ function hero() {
         trigger: ".intro",
         start: "top top",
         end: "top 20%",
-        scrub: 1
-      }
+        scrub: 1,
+      },
     }
   );
 }
@@ -470,13 +470,13 @@ function animationText() {
       element,
       {
         opacity: 0,
-        y: 20
+        y: 20,
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 85%",
-          end: "bottom 85%"
+          end: "bottom 85%",
           // markers: true,
         },
         opacity: 1,
@@ -484,8 +484,8 @@ function animationText() {
         duration: 1,
         ease: "sine.out",
         stagger: {
-          amount: 0.3
-        }
+          amount: 0.3,
+        },
       }
     );
   });
@@ -516,7 +516,7 @@ function text() {
   const fx1Titles = [
     ...document.querySelectorAll(
       ".details__title[data-splitting][data-effect-one]"
-    )
+    ),
   ];
   fx1Titles.forEach((title) => {
     const chars = title.querySelectorAll(".char");
@@ -530,7 +530,7 @@ function text() {
         transformOrigin: "50% 0%",
         opacity: 0,
         rotationX: -90,
-        z: -200
+        z: -200,
       },
       {
         ease: "power1",
@@ -541,10 +541,10 @@ function text() {
         scrollTrigger: {
           trigger: title,
           start: "center bottom",
-          end: "bottom top+=50%"
+          end: "bottom top+=50%",
           // scrub: true,
           // markers: true,
-        }
+        },
       }
     );
   });
@@ -592,9 +592,9 @@ function changeVariantProduct() {
         end: "bottom top",
         scrub: 1,
         duration: 1,
-        ease: "power4"
+        ease: "power4",
         //markers: true
-      }
+      },
     });
   });
   // Pin .product-variant khi chạm vào header
@@ -613,8 +613,8 @@ function changeVariantProduct() {
         } else {
           $(".product-variant").removeClass("done");
         }
-      }
-    }
+      },
+    },
   });
 
   // Hiệu ứng opacity của .product-sku và .product-variant-content
@@ -694,8 +694,8 @@ function changeVariantProduct() {
       autoplay: false,
       navigation: {
         nextEl: wrapper.querySelector(".swiper-button-next"), // Scoped to the wrapper
-        prevEl: wrapper.querySelector(".swiper-button-prev") // Scoped to the wrapper
-      }
+        prevEl: wrapper.querySelector(".swiper-button-prev"), // Scoped to the wrapper
+      },
     });
   });
 }
@@ -729,7 +729,7 @@ function stickyMenu() {
         gsap.to(window, {
           duration: 0.5,
           scrollTo: { y: id, offsetY: 0 },
-          ease: "power2.out"
+          ease: "power2.out",
         });
       });
     });
@@ -758,7 +758,7 @@ function stickyMenu() {
           link.classList.add("active");
         },
         onLeave: () => link.classList.remove("active"),
-        onLeaveBack: () => link.classList.remove("active")
+        onLeaveBack: () => link.classList.remove("active"),
       });
     });
   });
@@ -767,15 +767,15 @@ function stickyMenu() {
   // Thiết lập trạng thái ban đầu
   gsap.set(".sticky-menu__container ul li:nth-child(-n+3)", {
     autoAlpha: 1, // <li> 1, 2, 3 hiện
-    width: "auto"
+    width: "auto",
   });
 
   gsap.set(".sticky-menu__container ul li:nth-child(4)", {
     autoAlpha: 0, // <li> 4 ẩn
     width: "0",
-    padding: "0"
+    padding: "0",
   });
-
+  const wMobile = $(window).width() < 767 ? "100%" : "auto";
   // Tạo timeline cho hiệu ứng
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -791,8 +791,8 @@ function stickyMenu() {
         } else {
           tl.reverse();
         }
-      }
-    }
+      },
+    },
   });
 
   // Thêm các hiệu ứng vào timeline
@@ -801,7 +801,7 @@ function stickyMenu() {
     .to(".sticky-menu__container", {
       scale: 0,
       duration: 0.3,
-      ease: "power2.in"
+      ease: "power2.in",
     })
     // Ẩn li 1, 2, 3 và hiện li 4 (đồng thời)
     .to(
@@ -809,9 +809,10 @@ function stickyMenu() {
       {
         autoAlpha: 0,
         width: "0",
+        height: "0",
         padding: "0",
         duration: 0.5,
-        ease: "power2.inOut"
+        ease: "power2.inOut",
       },
       "<" // Chạy đồng thời với bước scale về 0
     )
@@ -819,10 +820,10 @@ function stickyMenu() {
       ".sticky-menu__container ul li:nth-child(4)",
       {
         autoAlpha: 1,
-        width: "auto",
+        width: wMobile,
         padding: "initial",
         duration: 0.5,
-        ease: "power2.inOut"
+        ease: "power2.inOut",
       },
       "<" // Chạy đồng thời với bước trên
     )
@@ -831,7 +832,7 @@ function stickyMenu() {
       scale: 1,
       duration: 0.3,
       transformOrigin: "center",
-      ease: "power2.out"
+      ease: "power2.out",
     });
 }
 stickyMenu();
@@ -845,12 +846,12 @@ function swiperDiscover() {
     new Swiper(container, {
       slidesPerView: 1,
       pagination: {
-        el: container.querySelector(".swiper-pagination")
+        el: container.querySelector(".swiper-pagination"),
       },
       navigation: {
         nextEl: container.querySelector(".swiper-button-next"),
-        prevEl: container.querySelector(".swiper-button-prev")
-      }
+        prevEl: container.querySelector(".swiper-button-prev"),
+      },
     });
   });
 }
@@ -881,7 +882,7 @@ function customCursor() {
       x: e.clientX,
       y: e.clientY,
       duration: 0.2,
-      ease: "power2.out"
+      ease: "power2.out",
     });
   });
 }
