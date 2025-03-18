@@ -69,20 +69,21 @@ function intro() {
 }
 
 function productDetail() {
-  $(".list-button").mousemove(function (e) {
-    callParallax(e);
-  });
+  if ($(window).width() > 767) {
+    $(".list-button").mousemove(function (e) {
+      callParallax(e);
+    });
 
-  $(".list-button").mouseleave(function (e) {
-    TweenMax.to(this, 0.3, { height: 0, width: 40 });
-    TweenMax.to(".button-circle", 0.3, { scale: 1, x: 0, y: 0 });
-  });
+    $(".list-button").mouseleave(function (e) {
+      TweenMax.to(this, 0.3, { height: 0, width: 40 });
+      TweenMax.to(".button-circle", 0.3, { scale: 1, x: 0, y: 0 });
+    });
 
-  $(".list-button .button-circle").mouseenter(function (e) {
-    TweenMax.to(this, 0.3, { scale: 1.4 });
-    // TweenMax.to(".button-circle .text::before", 0.3, { scale: 0.4 });
-  });
-  //
+    $(".list-button .button-circle").mouseenter(function (e) {
+      TweenMax.to(this, 0.3, { scale: 1.4 });
+      // TweenMax.to(".button-circle .text::before", 0.3, { scale: 0.4 });
+    });
+  }
 
   // start open popup
   $(".product-variant .content-top__image").on("click", function (e) {
@@ -145,8 +146,10 @@ function productDetail() {
       $(".sticky-menu").addClass("hide");
 
       let viewWidth = $(window).width() / 2;
-      if (viewWidth > 600) {
+      if (viewWidth > 600 && $(window).width() > 767) {
         viewWidth = 600;
+      } else {
+        viewWidth = $(window).width();
       }
 
       $(`section.product-detail${moreClassSection} .wrapper-content`)
@@ -159,7 +162,7 @@ function productDetail() {
         );
 
       gsap.fromTo(
-        `section.product-detail${moreClassSection} .wrapper-content`, // Selector
+        `section.product-detail${moreClassSection} .wrapper-content`,
         {
           width: 0, // Giá trị ban đầu của width
           x: "100%" // Giá trị ban đầu của transformY
@@ -211,9 +214,12 @@ function closeTabProductDetail(moreClassSection, dataTab) {
   $(".sticky-menu").removeClass("hide");
 
   let viewWidth = $(window).width() / 2;
-  if (viewWidth > 600) {
+  if (viewWidth > 600 && $(window).width() > 767) {
     viewWidth = 600;
+  } else {
+    viewWidth = $(window).width();
   }
+
   gsap.fromTo(
     `section.product-detail${moreClassSection} .wrapper-content .detail-${dataTab}`, // Selector
     {

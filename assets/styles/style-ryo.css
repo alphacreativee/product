@@ -1093,4 +1093,29 @@ section.product-variant .content-pagination li.active::after {
   .button-custom div span {
     transform: translateY(-11px) translateZ(0);
   }
+
+  section.product-detail .img {
+    height: 375px;
+  }
+
+  section.product-detail .button-circle .text {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  section.product-detail .content .img img {
+    transform: none !important;
+  }
+
+  section.product-detail .wrapper-content .tab {
+    padding: 64px 16px;
+  }
+
+  section.product-detail .content.active .wrapper-image {
+    max-width: 0;
+  }
+
+  section.product-detail .wrapper-content .tab-close {
+    right: 16px;
+  }
 }
