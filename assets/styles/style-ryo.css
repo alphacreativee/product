@@ -987,7 +987,7 @@ section.product-variant .content-pagination li.active::after {
   backface-visibility: hidden;
   font-style: normal;
   transition: transform var(--duration) ease;
-  transform: translateY(-12px) translateZ(0);
+  transform: translateY(var(--m)) translateZ(0);
   min-width: 4px;
 }
 
