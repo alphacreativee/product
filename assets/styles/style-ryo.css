@@ -1112,10 +1112,18 @@ section.product-variant .content-pagination li.active::after {
   }
 
   section.product-detail .content.active .wrapper-image {
-    max-width: 0;
+    max-width: 100%;
   }
 
   section.product-detail .wrapper-content .tab-close {
     right: 16px;
+  }
+
+  section.product-detail .wrapper-content {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    transform: translateX(100%);
   }
 }
