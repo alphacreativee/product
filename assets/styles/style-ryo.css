@@ -1153,4 +1153,8 @@ section.product-variant .content-pagination li.active::after {
     line-height: 22px;
     color: #000;
   }
+
+  .product-sku {
+    top: 60px;
+  }
 }
