@@ -1079,6 +1079,7 @@ section.product-variant .content-pagination li.active::after {
 
   section.product-variant .content-top {
     width: 75%;
+    transform: translateY(-20px);
   }
 
   section.product-variant .content-bottom .title {
@@ -1125,5 +1126,31 @@ section.product-variant .content-pagination li.active::after {
     right: 0;
     width: 100vw;
     transform: translateX(100%);
+  }
+
+  section.product-variant .content-top__image {
+    margin-top: 0;
+  }
+
+  section.product-variant .content-bottom {
+    top: -110px;
+  }
+
+  section.product-variant .content-pagination {
+    bottom: -15px;
+  }
+
+  section.product-variant .btn-more-info {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    gap: 8px;
+    text-decoration: underline;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
   }
 }
