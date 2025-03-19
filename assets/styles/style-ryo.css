@@ -1114,11 +1114,11 @@ section.product-variant .content-pagination li.active::after {
   }
 
   section.product-detail .content .img img {
-    transform: none !important;
+    transform: scale(1.1) !important;
   }
 
   section.product-detail .wrapper-content .tab {
-    padding: 64px 16px 16px;
+    padding: 64px 16px 24px;
   }
 
   section.product-detail .content.active .wrapper-image {
@@ -1249,6 +1249,10 @@ section.product-variant .content-pagination li.active::after {
   }
 
   section.product-detail {
+    height: 70vh;
+  }
+
+  section.product-detail.product-2 {
     height: 65vh;
   }
 
