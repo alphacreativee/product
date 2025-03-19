@@ -272,7 +272,7 @@ function animateZoomIn() {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   const posMobile = $(window).width() < 767 ? "-100" : "-150";
-  const posEndMobile = $(window).width() < 767 ? "70" : "100";
+  const posEndMobile = $(window).width() < 767 ? "60" : "100";
 
   $(".animate-zoomin").each(function () {
     let target = $(this);
