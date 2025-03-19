@@ -476,6 +476,6 @@ section.product-variant {
     background-color: var(--bg-body);
   }
   .product-sku__container {
-    height: auto !important;
+    height: 470px !important;
   }
 }

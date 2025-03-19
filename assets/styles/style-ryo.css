@@ -1246,4 +1246,12 @@ section.product-variant .content-pagination li.active::after {
   .hero__img img {
     height: auto;
   }
+
+  section.product-detail {
+    height: 70vh;
+  }
+
+  section.product-detail .wrapper-image {
+    height: 70vh;
+  }
 }
