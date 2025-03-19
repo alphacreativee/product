@@ -76,8 +76,14 @@
       <div class="hero-overlay"></div>
       <div class="container-fluid p-0">
         <div class="hero__img">
-          <img src="./assets/images/png/hero.png" alt="Hero Image"  class="d-none d-lg-block"/>
-          <img src="./assets/images/png/hero_mobile.png" alt="hero mobile" class="d-block d-lg-none">
+          <picture>
+              <source srcset="./assets/images/png/hero_mobile.png" media="(max-width: 480px)">
+              <source srcset="./assets/images/png/hero.png" media="(min-width: 481px)">
+              <img src="./assets/images/png/hero.png" alt="Hero Image">
+          </picture>
+
+          <!-- <img src="./assets/images/png/hero.png" alt="Hero Image"  class="d-none d-lg-block"/>
+          <img src="./assets/images/png/hero_mobile.png" alt="hero mobile" class="d-block d-lg-none"> -->
         </div>
       </div>
       <div class="intro">

@@ -401,6 +401,7 @@ section.product-variant {
   }
   .sticky-menu__container ul li {
     padding: 6px;
+    text-align: center;
   }
   .sticky-menu__container ul li a.btn-buy {
     margin-left: 6px;
@@ -436,7 +437,7 @@ section.product-variant {
     text-align: center;
   }
   .sticky-menu__container ul li:nth-child(3) {
-    text-align: right;
+    /* text-align: right; */
   }
   .sticky-menu__container ul li:nth-child(5) {
     width: 100% !important;
