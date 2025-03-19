@@ -1227,4 +1227,13 @@ section.product-variant .content-pagination li.active::after {
   .content-discover__img .swiper-pagination {
     bottom: 40px;
   }
+
+  .details {
+    padding-top: 64px;
+  }
+
+  .details h1 {
+    font-size: 56px;
+    line-height: 100%;
+  }
 }
