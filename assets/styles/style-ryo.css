@@ -183,10 +183,10 @@ section.product-detail .content {
 section.product-detail .wrapper-content .tab {
   position: absolute;
   z-index: 1;
-  top: 0;
+  bottom: 0;
   right: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: #fff;
   padding: 64px;
 
