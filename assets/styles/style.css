@@ -425,6 +425,7 @@ section.product-variant {
   .sticky-menu {
     width: calc(100% - 32px);
     max-width: 100%;
+    bottom: 16px !important;
   }
   .sticky-menu__container ul li:nth-child(1),
   .sticky-menu__container ul li:nth-child(2),

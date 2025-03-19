@@ -213,6 +213,12 @@ section.product-detail .wrapper-content .tab-img {
   position: relative;
 }
 
+section.product-detail .wrapper-content .tab-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 section.product-detail .wrapper-content .tab-img.has-hover:hover img {
   opacity: 0;
   visibility: hidden;
@@ -1235,5 +1241,9 @@ section.product-variant .content-pagination li.active::after {
   .details h1 {
     font-size: 56px;
     line-height: 100%;
+  }
+
+  .hero__img img {
+    height: auto;
   }
 }
