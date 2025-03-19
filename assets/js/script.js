@@ -90,7 +90,7 @@ function productDetail() {
     "click",
     function (e) {
       $(".content-discover").addClass("show-popup");
-      $(".content-discover").css("z-index", "199");
+      $(".content-discover").css("z-index", "1999");
       $("body").addClass("overflow-hidden");
     }
   );
