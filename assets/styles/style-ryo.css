@@ -1248,10 +1248,10 @@ section.product-variant .content-pagination li.active::after {
   }
 
   section.product-detail {
-    height: 70vh;
+    height: 60vh;
   }
 
   section.product-detail .wrapper-image {
-    height: 70vh;
+    height: 60vh;
   }
 }
