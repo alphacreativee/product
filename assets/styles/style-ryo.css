@@ -1118,7 +1118,7 @@ section.product-variant .content-pagination li.active::after {
   }
 
   section.product-detail .wrapper-content .tab {
-    padding: 64px 16px;
+    padding: 64px 16px 16px;
   }
 
   section.product-detail .content.active .wrapper-image {
@@ -1258,5 +1258,9 @@ section.product-variant .content-pagination li.active::after {
 
   body.overflow-hidden {
     touch-action: none;
+  }
+
+  section.product-detail .wrapper-content .tab-close {
+    top: 70px;
   }
 }
