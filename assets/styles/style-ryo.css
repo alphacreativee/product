@@ -182,6 +182,7 @@ section.product-detail .content {
 
 section.product-detail .wrapper-content .tab {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   width: 100%;
@@ -1253,5 +1254,9 @@ section.product-variant .content-pagination li.active::after {
 
   section.product-detail .wrapper-image {
     height: 65vh;
+  }
+
+  body.overflow-hidden {
+    touch-action: none;
   }
 }
