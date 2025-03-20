@@ -1133,7 +1133,7 @@ section.product-variant .content-pagination li.active::after {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 100vw;
+    width: 100vw !important;
     transform: translateX(100%);
   }
 
@@ -1270,5 +1270,9 @@ section.product-variant .content-pagination li.active::after {
 
   .button-circle {
     height: 50px;
+  }
+
+  section.product-detail .content.active .tab.active {
+    transition-delay: 0.2s;
   }
 }

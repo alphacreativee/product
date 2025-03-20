@@ -164,6 +164,7 @@ function productDetail() {
           1000
         );
 
+      const timeTranslateMobile = $(window).width() < 768 ? "0.6" : "1";
       gsap.fromTo(
         `section.product-detail${moreClassSection} .wrapper-content`,
         {
@@ -173,7 +174,7 @@ function productDetail() {
         {
           width: viewWidth, // Thu hẹp chiều rộng về 0
           x: 0, // Di chuyển phần tử xuống dưới (transformY 100%)
-          duration: 1, // Thời gian thay đổi (1 giây)
+          duration: timeTranslateMobile, // Thời gian thay đổi (1 giây)
           ease: "none" // Hiệu ứng mượt mà
         }
       );
