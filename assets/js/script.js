@@ -271,9 +271,9 @@ function closeTabProductDetail(moreClassSection, dataTab) {
 function animateZoomIn() {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-  const posMobile = $(window).width() < 767 ? "-100" : "-150";
+  const posMobile = $(window).width() < 767 ? "-70" : "-150";
   const posEndMobile = $(window).width() < 767 ? "65" : "100";
-  const posYMobile = $(window).width() < 767 ? "-80" : "-150";
+  const posYMobile = $(window).width() < 767 ? "-70" : "-150";
 
   $(".animate-zoomin").each(function () {
     let target = $(this);
@@ -919,6 +919,8 @@ const init = () => {
           "</span></div>")
     );
 };
+
+init();
 
 $(window).on("beforeunload", function () {
   window.scrollTo(0, 0);
