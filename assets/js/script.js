@@ -273,6 +273,7 @@ function animateZoomIn() {
 
   const posMobile = $(window).width() < 767 ? "-100" : "-150";
   const posEndMobile = $(window).width() < 767 ? "65" : "100";
+  const posYMobile = $(window).width() < 767 ? "-80" : "-150";
 
   $(".animate-zoomin").each(function () {
     let target = $(this);
@@ -347,7 +348,7 @@ function animateZoomIn() {
       {
         scale: "2",
         transformOrigin: "top center",
-        y: -150
+        y: posYMobile
       },
       {
         scrollTrigger: {
@@ -918,11 +919,6 @@ const init = () => {
           "</span></div>")
     );
 };
-preloadImages("img").then(() => {
-  // Once images are preloaded, remove the 'loading' indicator/class from the body
-
-  init();
-});
 
 $(window).on("beforeunload", function () {
   window.scrollTo(0, 0);

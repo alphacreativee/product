@@ -198,7 +198,7 @@ section.product-detail .wrapper-content .tab {
   transition-delay: 0.2s;
 }
 
-section.product-detail .content.active .tab {
+section.product-detail .content.active .tab.active {
   transform: translateX(0) scale(1);
   transition-delay: 0.7s;
 }
@@ -1114,7 +1114,7 @@ section.product-variant .content-pagination li.active::after {
   }
 
   section.product-detail .content .img img {
-    transform: scale(1.1) !important;
+    transform: scale(1.15) !important;
   }
 
   section.product-detail .wrapper-content .tab {
@@ -1151,7 +1151,7 @@ section.product-variant .content-pagination li.active::after {
 
   section.product-variant .btn-more-info {
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
