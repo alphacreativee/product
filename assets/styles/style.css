@@ -284,7 +284,7 @@ section.product-variant {
 .product-variant.done .product-sku__img {
   opacity: 1;
   visibility: visible;
-  transform: translateY(80px);
+  transform: translate(-10px, 120px);
   transition: opacity 0.8s ease, transform 0.7s ease;
   transition-delay: 1.3s;
 }
@@ -320,7 +320,7 @@ section.product-variant {
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(120px);
+  transform: translate(-10px, 140px);
 }
 .product-sku__img img {
   width: auto;
