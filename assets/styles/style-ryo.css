@@ -1267,4 +1267,8 @@ section.product-variant .content-pagination li.active::after {
   section.product-detail .wrapper-content .tab-close {
     top: 70px;
   }
+
+  .button-circle {
+    height: 50px;
+  }
 }
