@@ -424,7 +424,8 @@ section.product-variant {
     position: relative;
   }
   .sticky-menu {
-    width: calc(100% - 32px);
+    /* max-width: 100%; */
+    width: 100%;
     max-width: 100%;
     bottom: 16px !important;
   }
