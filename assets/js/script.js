@@ -858,6 +858,7 @@ function swiperDiscover() {
   swiperDiscoverContainers.forEach((container) => {
     new Swiper(container, {
       slidesPerView: 1,
+      loop: "true",
       pagination: {
         el: container.querySelector(".swiper-pagination")
       },
