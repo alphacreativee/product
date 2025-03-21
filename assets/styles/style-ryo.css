@@ -1056,6 +1056,12 @@ section.product-variant .content-pagination li.active::after {
 }
 
 @media (max-width: 767px) {
+  .content-discover__content .group-color ul {
+    gap: 24px;
+  }
+  section.product-variant .content-pagination {
+    gap: 24px;
+  }
   .cursor {
     display: none;
   }
@@ -1312,6 +1318,6 @@ section.product-variant .content-pagination li.active::after {
   }
 
   .product-variant.done .product-sku__img {
-    transform: translateY(110px);
+    transform: translateY(120px);
   }
 }
