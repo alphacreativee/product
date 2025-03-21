@@ -133,7 +133,7 @@ section.product-detail .content.active .wrapper-image {
 
 section.product-detail .wrapper-content {
   width: 0;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   overflow: hidden;
 }
@@ -186,8 +186,7 @@ section.product-detail .content {
 section.product-detail .wrapper-content .tab {
   position: absolute;
   z-index: 1;
-  top: 0;
-  bottom: 0;
+  top: -1px;
   right: 0;
   width: 100%;
   height: 101dvh;
@@ -1086,13 +1085,14 @@ section.product-variant .content-pagination li.active::after {
   }
 
   .product-sku__name {
-    font-size: 56px;
-    line-height: 56px;
+    font-size: 64px;
+    line-height: 64px;
     top: 0;
+    transform: translate(-50%, 32px);
   }
 
   .product-sku__img {
-    height: 500px;
+    height: 400px;
   }
 
   section.product-variant .content-top {
@@ -1144,8 +1144,9 @@ section.product-variant .content-pagination li.active::after {
     position: fixed;
     bottom: 0;
     right: 0;
+    height: 101dvh;
     width: 100vw !important;
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(-1px);
   }
 
   section.product-variant .content-top__image {
@@ -1308,5 +1309,9 @@ section.product-variant .content-pagination li.active::after {
   section.product-detail .wrapper-content .tab .desc {
     font-size: 12px;
     line-height: 20px;
+  }
+
+  .product-variant.done .product-sku__img {
+    transform: translateY(110px);
   }
 }
