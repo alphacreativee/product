@@ -245,7 +245,7 @@ section.product-variant {
 }
 .product-sku {
   position: absolute;
-  top: 120px;
+  top: 80px;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 4;
@@ -284,7 +284,7 @@ section.product-variant {
 .product-variant.done .product-sku__img {
   opacity: 1;
   visibility: visible;
-  transform: translate(0, 120px);
+  transform: translate(0, 80px);
   transition: opacity 0.8s ease, transform 0.7s ease;
   transition-delay: 1.3s;
 }
@@ -314,7 +314,7 @@ section.product-variant {
 }
 .product-sku__img {
   width: auto;
-  height: 680px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
