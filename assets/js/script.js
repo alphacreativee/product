@@ -145,6 +145,13 @@ function productDetail() {
         `section.product-detail${moreClassSection} [detail-${dataTab}]`
       ).addClass("active");
 
+      let thisVideo = $(
+        `section.product-detail${moreClassSection} [detail-${dataTab}] video`
+      );
+      if (thisVideo.length) {
+        thisVideo[0].play();
+      }
+
       $("body").addClass("overflow-hidden");
       $(".sticky-menu").addClass("hide");
 
