@@ -22,6 +22,19 @@ section.product-detail .img {
   /* transition-duration: 0.5s; */
   height: 730px;
 }
+section.product-detail .img::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background-color: #a77c63;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(215px);
+}
 
 section.product-detail .button-circle[data-tab="tab1"] {
   position: absolute;
@@ -1056,6 +1069,11 @@ section.product-variant .content-pagination li.active::after {
 }
 
 @media (max-width: 767px) {
+  section.product-detail .img::before {
+    width: 200px;
+    height: 200px;
+    bottom: 0;
+  }
   .content-discover__content .group-color ul {
     gap: 24px;
   }
