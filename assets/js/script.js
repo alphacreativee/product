@@ -868,6 +868,17 @@ function swiperDiscover() {
   swiperDiscoverContainers.forEach((container) => {
     new Swiper(container, {
       slidesPerView: 1,
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          // shadow: true,
+          translate: ["-120%", 0, -700],
+        },
+        next: {
+          // shadow: true,
+          translate: ["120%", 0, -700],
+        },
+      },
       loop: "true",
       pagination: {
         el: container.querySelector(".swiper-pagination")
