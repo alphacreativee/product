@@ -395,7 +395,7 @@ section.product-variant {
     will-change: transform, opacity;
   }
   .product-sku__name {
-    width: calc(100% - 80px);
+    width: calc(100% - 60px);
   }
   .hero__img {
     padding: 48px 16px 0;
