@@ -1135,7 +1135,7 @@ section.product-variant .content-pagination li.active::after {
   }
 
   section.product-detail .wrapper-content .tab {
-    padding: 64px 16px 24px;
+    padding: 64px 16px 16px;
   }
 
   section.product-detail .content.active .wrapper-image {
@@ -1165,6 +1165,7 @@ section.product-variant .content-pagination li.active::after {
 
   section.product-variant .content-pagination {
     bottom: -30px;
+    gap: 24px;
   }
 
   section.product-variant .btn-more-info {
@@ -1319,5 +1320,9 @@ section.product-variant .content-pagination li.active::after {
 
   .product-variant.done .product-sku__img {
     transform: translateY(120px);
+  }
+
+  .content-discover__content .group-color ul {
+    gap: 24px;
   }
 }
