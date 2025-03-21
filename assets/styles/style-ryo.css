@@ -1092,7 +1092,7 @@ section.product-variant .content-pagination li.active::after {
   }
 
   .product-sku__img {
-    height: 400px;
+    height: 500px;
   }
 
   section.product-variant .content-top {
@@ -1191,7 +1191,7 @@ section.product-variant .content-pagination li.active::after {
   }
 
   .product-sku {
-    top: 60px;
+    top: 50px;
   }
 
   .content-discover .content-discover__img {
