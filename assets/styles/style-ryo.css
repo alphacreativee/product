@@ -1086,8 +1086,8 @@ section.product-variant .content-pagination li.active::after {
   }
 
   .product-sku__name {
-    font-size: 70px;
-    line-height: 70px;
+    font-size: 56px;
+    line-height: 56px;
     top: 0;
   }
 
@@ -1164,7 +1164,7 @@ section.product-variant .content-pagination li.active::after {
     position: absolute;
     bottom: -90px;
     left: 50%;
-    transform: translateX(-100px);
+    transform: translateX(-83px);
     width: max-content;
     gap: 8px;
     font-weight: 300;
@@ -1175,6 +1175,8 @@ section.product-variant .content-pagination li.active::after {
 
   section.product-variant .btn-more-info span {
     position: relative;
+    font-size: 12px;
+    line-height: 20px;
   }
 
   section.product-variant .btn-more-info span::after {
@@ -1267,7 +1269,7 @@ section.product-variant .content-pagination li.active::after {
   }
 
   .details h1 {
-    font-size: 56px;
+    font-size: 48px;
     line-height: 100%;
   }
 
