@@ -388,17 +388,20 @@ section.product-variant {
 }
 /* end section intro */
 @media (max-width: 767px) {
+  .header__logo img {
+    height: 8.5px;
+  }
   .sticky-menu__container ul li:nth-child(4) {
     will-change: transform, opacity;
   }
   .product-sku__name {
-    width: calc(100% - 48px);
+    width: calc(100% - 80px);
   }
   .hero__img {
-    padding: 64px 16px 0;
+    padding: 48px 16px 0;
   }
   .header__container {
-    padding: 20px 0;
+    padding: 12px 0;
   }
   .sticky-menu__container ul li {
     padding: 6px;
@@ -479,5 +482,9 @@ section.product-variant {
   }
   .product-sku__container {
     height: 470px !important;
+  }
+  .details p {
+    font-size: 12px;
+    line-height: 20px;
   }
 }
