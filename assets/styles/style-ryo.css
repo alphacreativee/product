@@ -1304,4 +1304,9 @@ section.product-variant .content-pagination li.active::after {
   section.product-detail .content.active .tab.active {
     transition-delay: 0.2s;
   }
+
+  section.product-detail .wrapper-content .tab .desc {
+    font-size: 12px;
+    line-height: 20px;
+  }
 }
